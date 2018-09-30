@@ -13,10 +13,9 @@
  ---------------------------
  
  ### user stories
-As a manger,
-  * I want to to login to the system.
 
-As a admin,
+As a HR Manager:
+  * I want to login to the site
   * I want to to see the overview the price of dollars, value of taxes, Exemption of resident, Percentage of the Institute's contribution to the guarantee and the employee's contribution to the guarantee.
   *  I want to click on employees section and view the 10 employee per page.
   *  I want to click on the employee name and see the details of any employee.
