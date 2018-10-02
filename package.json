@@ -6,6 +6,10 @@
   "dependencies": {
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0"
+    "env2": "^2.2.2",
+    "pg": "^7.4.3",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.39.0"
   },
   "devDependencies": {
     "eslint": "^5.6.1",

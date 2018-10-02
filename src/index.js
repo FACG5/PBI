@@ -1,5 +1,8 @@
 const app = require('./app');
+const models = require('./database/dbConnect');
 
-app.listen(app.get('port'), () => {
-  console.log('App running on port', app.get('port'));
+models.connection.sync({ force: true }).then(() => {
+  app.listen(app.get('port'), () => {
+    console.log('App running on port', app.get('port'));
+  });
 });
