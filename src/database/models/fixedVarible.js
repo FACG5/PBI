@@ -10,8 +10,7 @@ module.exports = (connection, sequelize) => {
     },
     tax_value: {
       type: sequelize.DOUBLE,
-      defaultValue: 3.5,
-      // edit this
+      defaultValue: 0.05,
     },
     contribution_institute: {
       type: sequelize.DOUBLE,

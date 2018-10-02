@@ -1,7 +1,13 @@
 const Sequelize = require('sequelize');
+require('env2')('./config.env');
 
-const connection = new Sequelize('pbi', 'othman50', '123', {
-  host: 'localhost',
+const host = process.env.HOST || 'localhost'
+const username = process.env.db_username;
+const password = process.env.db_password;
+const dbname = process.env.db_name;
+
+const connection = new Sequelize(dbname, username, password, {
+  host,
   dialect: 'postgres',
   operatorsAliases: false,
   define: {
