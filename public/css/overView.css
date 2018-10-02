@@ -1,0 +1,29 @@
+
+.box{
+    width: 100%;
+    margin-top: 30px;
+    border: 1.5px solid #0000000d;
+    min-height: 400px;
+    box-shadow: -2px 1px 3px 0px #201a3a3d;
+    border-radius: 10px;
+
+}
+.box hr{
+    box-shadow: 0px 0px 1px 0px #201a3a
+}
+.box ul{
+list-style: none;
+padding: 30px 80px;
+}
+.box ul li{
+    font-size: 20px;
+    color: #201a3a;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: space-between;
+}
+.box ul hr {
+    box-shadow: 0px 0px 1px 0px #201a3a;
+margin-bottom: 10px;
+}
