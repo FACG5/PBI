@@ -16,8 +16,6 @@ app.engine('hbs', handlebars({
   partialsDir: path.join(__dirname, 'views', 'partials'),
   defaultLayout: 'main',
 }));
-console.log(55);
-
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(controller);
 
