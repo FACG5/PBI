@@ -12,29 +12,14 @@
             <th>المسمى الوظيفي</th>
             <th>الفئة</th>
         </tr>
+        {{#each result}}
         <tr>
-            <td>مهند نزيه الحنفي</td>
-            <td>40096685540</td>
-            <td>مساعد إداري</td>
-            <td>A</td>
+            <td>{{dataValues.name}}</td>
+            <td>{{dataValues.idNumber}}</td>
+            <td>{{dataValues.jobTitle}}</td>
+            <td>{{dataValues.class}}</td>
         </tr>
-        <tr>
-            <td>إبراهيم عﻻء الشيخ علي</td>
-            <td>40096685540</td>
-            <td>مساعد إداري</td>
-            <td>A</td>
-        </tr>
-        <tr>
-            <td>عثمان ابصر ايش ابو شملة</td>
-            <td>40096685540</td>
-            <td>مساعد إداري</td>
-            <td>A</td>
-        </tr>
-        <tr>
-            <td>علي احمد الشيخ احمد</td>
-            <td>40096685540</td>
-            <td>مساعد إداري</td>
-            <td>A</td>
-        </tr>
+       {{/each}} 
+      
     </table>
 </div>
