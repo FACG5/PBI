@@ -1,0 +1,90 @@
+.box table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 30px 0;
+}
+
+.box td, .box th {
+    padding: 8px;
+    text-align: center
+}
+
+.box td i {
+    color: red;
+    cursor: pointer;
+}
+
+.box tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.box tr:hover {
+    background-color: #ddd;
+}
+
+.box th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #201a3a;
+    color: white;
+}
+
+.box .add {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 30px;
+}
+
+.box button {
+    box-shadow: -1px 1px 3px 0px #201a3a;
+    margin-top: 15px;
+    float: left;
+    border: none;
+    background: #201a3a;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 5px 10px;
+    width: 100px;
+    font-weight: bold;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.box button:hover {
+    background-color: #3f3663;
+}
+
+.box .add input {
+    border: none;
+    border-radius: 5px;
+    box-shadow: -1px 1px 3px 0px #201a3a;
+    width: 300px;
+    padding: 0px 10px;
+    background: none;
+}
+
+.box .add input::placeholder {
+    color: #C19827;
+}
+
+tr:nth-child(2n+3) {
+    background-color: rgba(32, 26, 58, 0.1)
+}
+
+table tr:first-child th:first-child {
+    border-top-right-radius: 6px;
+}
+
+table tr:first-child th:last-child {
+    border-top-left-radius: 6px;
+}
+
+table tr:last-child td:first-child {
+    border-bottom-right-radius: 6px;
+}
+
+table tr:last-child td:last-child {
+    border-bottom-left-radius: 6px;
+}
