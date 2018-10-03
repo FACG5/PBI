@@ -1,3 +1,7 @@
+const purchaseBox = require('../database/models/purchaseBox');
+
 exports.get = (req, res) => {
-  res.render('cart', { cssFile: 'cart' });
+  purchaseBox.findAll({ attributes: ['name'] }).then((result) => {
+    res.render('cart', { result, cssFile: 'cart' });
+  });
 };

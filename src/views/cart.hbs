@@ -6,22 +6,12 @@
             <th>اسم صندوق المشتريات</th>
             <th>حذف</th>
         </tr>
+        {{#each result }}
         <tr>
-            <td>برافو</td>
+            <td>{{dataValues.name}}</td>
             <td><i class="fas fa-trash-alt"></i></td>
         </tr>
-        <tr>
-            <td>سبيتان</td>
-            <td><i class="fas fa-trash-alt"></i></td>
-        </tr>
-        <tr>
-            <td>سبيتان</td>
-            <td><i class="fas fa-trash-alt"></i></td>
-        </tr>
-        <tr>
-            <td>سبيتان</td>
-            <td><i class="fas fa-trash-alt"></i></td>
-        </tr>
+    {{/each}}
     </table>
     <button>إضافة</button>
 </div>
