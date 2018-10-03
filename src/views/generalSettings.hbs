@@ -2,30 +2,32 @@
 <hr>
 <div class="box">
     <ul>
+        {{#each result }}
         <li>
             <label>سعر الدوﻻر</label>
-            <input type="text" placeholder="3.5">
+            <input type="text" placeholder="{{dataValues.dolar}}">
         </li>
         <li>
             <label>القيمة الضريبية</label>
-            <input type="text" placeholder="3.5">
+            <input type="text" placeholder="{{dataValues.taxValue}}">
         </li>
         <li>
             <label>نسبة الادخار</label>
-            <input type="text" placeholder="3.5">
+            <input type="text" placeholder="{{dataValues.savingRatio}}">
         </li>
         <li>
             <label>نسبة مساهمة المعهد في الضمان</label>
-            <input type="text" placeholder="3.5">
+            <input type="text" placeholder="{{dataValues.contributionInstitute}}">
         </li>
         <li>
             <label>نسبة مساهمة الموظف في الضمان</label>
-            <input type="text" placeholder="3.5">
+            <input type="text" placeholder="{{dataValues.contributionEmployee}}">
         </li>
         <li>
             <label>اعفاء مقيم</label>
-            <input type="text" placeholder="3.5">
+            <input type="text" placeholder="{{dataValues.exemptionResident}}">
         </li>
+        {{/each}}
     </ul>
     <button>حفظ</button>
 </div>
