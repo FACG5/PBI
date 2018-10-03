@@ -1,8 +1,7 @@
 const app = require('./app');
-const models = require('./database/dbConnect');
+const { sequelize } = require('./database/models');
 
-
-models.connection.sync({ force: true }).then(() => {
+sequelize.sync().then(() => {
   app.listen(app.get('port'), () => {
     console.log('App running on port', app.get('port'));
   });

@@ -1,1 +1,5 @@
-module.exports = connection => connection.define('purchases_employee', {});
+const sequelize = require('../config/connection');
+
+const purchasesEmployee = sequelize.define('purchases_employee', {});
+
+module.exports = purchasesEmployee;
