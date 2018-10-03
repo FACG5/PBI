@@ -1,0 +1,54 @@
+.box {
+    /* margin-top: 10px; */
+}
+
+.box hr {
+    box-shadow: 0px 0px 1px 0px #201a3a;
+}
+
+.box ul {
+    list-style: none;
+    padding: 10px 40px;
+}
+
+.box ul li {
+    font-size: 20px;
+    color: #201a3a;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.box ul hr {
+    box-shadow: 0px 0px 1px 0px #201a3a;
+    margin-bottom: 10px;
+}
+
+.box input {
+    border: none;
+    border-radius: 5px;
+    box-shadow: -1px 1px 3px 0px #201a3a;
+    width: 80px;
+    padding: 0px 10px;
+}
+
+.box button {
+    box-shadow: -1px 1px 3px 0px #201a3a;
+    margin-top: 30px;
+    float: left;
+    border: none;
+    background: #201a3a;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 5px 10px;
+    width: 100px;
+    font-weight: bold;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.box button:hover {
+    background-color: #3f3663;
+}
