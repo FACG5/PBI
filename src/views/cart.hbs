@@ -1,0 +1,17 @@
+<h1 class='title'>صناديق المشتريات</h1>
+<hr>
+<div class="box">
+    <table>
+        <tr>
+            <th>اسم صندوق المشتريات</th>
+            <th>حذف</th>
+        </tr>
+        {{#each result }}
+        <tr>
+            <td>{{dataValues.name}}</td>
+            <td><i class="fas fa-trash-alt"></i></td>
+        </tr>
+    {{/each}}
+    </table>
+    <button>إضافة</button>
+</div>
