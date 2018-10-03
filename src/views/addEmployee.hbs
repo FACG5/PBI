@@ -13,7 +13,7 @@
             </li>
             <li>
                 <span>تاريخ الميلاد</span>
-                <input name='dataOfBirth' type="date">
+                <input name='birthday' type="date">
             </li>
             <li>
                 <span>مكان السكن</span>
@@ -29,7 +29,7 @@
             </li>
             <li>
                 <span>عدد الأبناء</span>
-                <input name='children' type="text">
+                <input name='children' type="number">
             </li>
             <li>
                 <span>الجنسية</span>
@@ -42,13 +42,13 @@
             <li>
                 <span>الفئة</span>
                 <select name = 'category'>
-                    <option value="0">1</option>
-                    <option value="1">2</option>
-                    <option value="2">3</option>
+                    <option value="0">A</option>
+                    <option value="1">B</option>
+                    <option value="2">C</option>
                 </select>
             </li>
             <li>
-                <span name = 'level' >الدرجة</span>
+                <span name = 'class' >الدرجة</span>
                 <select>
                     <option value="0">1</option>
                     <option value="1">2</option>
@@ -57,7 +57,7 @@
             </li>
             <li>
                 <span>عمل الزوجة</span>
-                <select name = 'wifeJob'>
+                <select name = 'wife'>
                     <option value="0">تعمل</option>
                     <option value="1">ﻻ تعمل</option>
                 </select>
@@ -70,15 +70,15 @@
             </li>
             <li>
                 <span>تاريخ التعيين</span>
-                <input name = 'dateOfWork' type="date">
+                <input name = 'jobStart' type="date">
             </li>
             <li>
                 <span>الراتب</span>
-                <input name = 'salary' type="text">
+                <input name = 'salary' type="number">
             </li>
             <li>
                 <span>نوع الوظيفة</span>
-                <select name = 'typeOfJob'>
+                <select name = 'jobType'>
                     <option value="0">مصنف</option>
                     <option value="1">غير مصنف</option>
                     <option value="2">مؤقت</option>
@@ -87,12 +87,12 @@
             </li>
             <li>
                 <span>المسئول المباشر</span>
-                <input name = 'directSupervisor' type="text">
+                <input name = 'supervisor' type="text">
             </li>
             <li class="full">
                 <span>الوصف الوظيفي للموظف</span>
-                <input type="file" name="file" id="file" class="inputfile1" />
-                <label for="file" class="labelfile"><i class="fas fa-cloud-upload-alt"></i> Upload file</label>
+                {{!-- <input type="file" name="file" id="file" class="inputfile1" />
+                <label for="file" class="labelfile"><i class="fas fa-cloud-upload-alt"></i> Upload file</label> --}}
             </li>
 
         </ul>

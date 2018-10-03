@@ -6,6 +6,9 @@ const convertCamelToSnake = (req, res, next) => {
       body[newK] = body[k];
       delete body[k];
     }
+    if (body[newK] === '') {
+      delete body[newK];
+    }
   });
   req.body = body;
   next();
