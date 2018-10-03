@@ -1,0 +1,25 @@
+<h1 class='title'>عرض تفاصيل الموظف - مهند نزيه الحنفي</h1>
+<hr>
+<div class="box">
+    <div class="add">
+        <input type="text" placeholder="بحث حسب الاسم">
+        <a href="/addEmployee"><button>إضافة موظف</button></a>
+    </div>
+    <table>
+        <tr>
+            <th>الاسم الرباعي</th>
+            <th>رقم الهوية</th>
+            <th>المسمى الوظيفي</th>
+            <th>الفئة</th>
+        </tr>
+        {{#each result}}
+        <tr>
+            <td>{{dataValues.name}}</td>
+            <td>{{dataValues.idNumber}}</td>
+            <td>{{dataValues.jobTitle}}</td>
+            <td>{{dataValues.class}}</td>
+        </tr>
+       {{/each}} 
+      
+    </table>
+</div>
