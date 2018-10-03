@@ -1,0 +1,102 @@
+<h1 class='title'>إضافة موظف جديد</h1>
+<hr>
+<div class="box">
+    <form action="/addEmployee" method="post">
+        <ul>
+            <li>
+                <span>الاسم رباعي</span>
+                <input name='name' type="text">
+            </li>
+            <li>
+                <span>رقم الهوية</span>
+                <input name='idNumber' type="text" required>
+            </li>
+            <li>
+                <span>تاريخ الميلاد</span>
+                <input name='birthday' type="date">
+            </li>
+            <li>
+                <span>مكان السكن</span>
+                <input name='location' type="text">
+            </li>
+            <li>
+                <span>الحالة الاجتماعية</span>
+                <select name='status'>
+                    <option value="0">أعزب</option>
+                    <option value="1">متزوج</option>
+                    <option value="2">مطلق</option>
+                </select>
+            </li>
+            <li>
+                <span>عدد الأبناء</span>
+                <input name='children' type="number">
+            </li>
+            <li>
+                <span>الجنسية</span>
+                <input name='nationality' type="text">
+            </li>
+            <li>
+                <span>الوظيفة</span>
+                <input name = 'jobTitle' type="text">
+            </li>
+            <li>
+                <span>الفئة</span>
+                <select name = 'category'>
+                    <option value="0">A</option>
+                    <option value="1">B</option>
+                    <option value="2">C</option>
+                </select>
+            </li>
+            <li>
+                <span name = 'class' >الدرجة</span>
+                <select>
+                    <option value="0">1</option>
+                    <option value="1">2</option>
+                    <option value="2">3</option>
+                </select>
+            </li>
+            <li>
+                <span>عمل الزوجة</span>
+                <select name = 'wife'>
+                    <option value="0">تعمل</option>
+                    <option value="1">ﻻ تعمل</option>
+                </select>
+            </li>
+            <li class="full">
+                <span>الشهادات العلمية</span>
+                <input type="text" placeholder="عنوان الشهادة" class="inputfull">
+                <input type="file" name="file" id="file" class="inputfile" />
+                <label for="file" class="labelfile"><i class="fas fa-cloud-upload-alt"></i> Upload file</label>
+            </li>
+            <li>
+                <span>تاريخ التعيين</span>
+                <input name = 'jobStart' type="date">
+            </li>
+            <li>
+                <span>الراتب</span>
+                <input name = 'salary' type="number">
+            </li>
+            <li>
+                <span>نوع الوظيفة</span>
+                <select name = 'jobType'>
+                    <option value="0">مصنف</option>
+                    <option value="1">غير مصنف</option>
+                    <option value="2">مؤقت</option>
+                    <option value="3">3</option>
+                </select>
+            </li>
+            <li>
+                <span>المسئول المباشر</span>
+                <input name = 'supervisor' type="text">
+            </li>
+            <li class="full">
+                <span>الوصف الوظيفي للموظف</span>
+                <input type="file" id="file" class="inputfile1" />
+                <label for="file" class="labelfile"><i class="fas fa-cloud-upload-alt"></i> Upload file</label>
+            </li>
+
+        </ul>
+        <button>إضافة موظف</button>
+        <button class="btn-special">رجوع</button>
+    </form>
+</div>

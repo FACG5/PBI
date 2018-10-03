@@ -33,7 +33,7 @@ const employee = sequelize.define('employee', {
   },
   salary: {
     type: Sequelize.DOUBLE,
-    defaultValue: 0,
+    defaultValue: 0.0,
   },
   class: {
     type: Sequelize.INTEGER,
