@@ -1,134 +1,120 @@
-module.exports = (connection, sequelize) => {
-  const employee = connection.define('employee', {
-    name: {
-      type: sequelize.STRING,
-      validate: {
-        notNull: {
-          args: true,
-          msg: 'رجاء ادخال اسم الموظف',
-        },
-      },
-      defaultValue: '',
-    },
-    id_number: {
-      type: sequelize.STRING,
-      unique: true,
-      notNull: true,
-    },
-    birthday: {
-      type: sequelize.STRING,
-      defaultValue: '',
-    },
-    location: {
-      type: sequelize.STRING,
-      defaultValue: '',
-    },
-    children: {
-      type: sequelize.INTEGER,
-      defaultValue: 0,
-    },
-    wife: {
-      type: sequelize.BOOLEAN,
-      defaultValue: false,
-    },
-    nationality: {
-      type: sequelize.STRING,
-      defaultValue: '',
-    },
-    salary: {
-      type: sequelize.DOUBLE,
-    },
-    class: {
-      type: sequelize.INTEGER,
-      defaultValue: 1,
-    },
-    category: {
-      type: sequelize.STRING,
-      defaultValue: 'E',
-    },
-    supervisor: {
-      type: sequelize.STRING,
-      defaultValue: '',
-    },
-    job_title: {
-      type: sequelize.STRING,
-      defaultValue: '',
-    },
-    job_type: {
-      type: sequelize.STRING,
-      defaultValue: '',
-    },
-    job_description: {
-      type: sequelize.STRING,
-      defaultValue: '',
-    },
-    job_start: {
-      type: sequelize.DATEONLY,
-      defaultValue: sequelize.now,
-    },
-    points: {
-      type: sequelize.INTEGER,
-      defaultValue: 0,
-    },
-    transportation: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    allowance_gasoline: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    allowance_mobile: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    allowance_work: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    allowance_Jerusalem: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    annual_rate: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    Deductions_health_insurance: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    Deductions_loans: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    Deductions_social_fund: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    uxemption_university: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    exemption_house: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    exemption_resident: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-  });
+const Sequelize = require('sequelize');
+const sequelize = require('../config/connection');
 
-  employee.associate = (models) => {
-    employee.hasMany(models.report);
-    employee.hasMany(models.certificate);
-    employee.belongsToMany(models.purchaseBox, {
-      through: {
-        model: models.purchasesEmployee,
-        unique: true,
-      },
-    });
-  };
-  return employee;
-};
+const employee = sequelize.define('employee', {
+  name: {
+    type: Sequelize.STRING,
+    defaultValue: '',
+  },
+  id_number: {
+    type: Sequelize.STRING,
+    unique: true,
+    notNull: true,
+  },
+  birthday: {
+    type: Sequelize.STRING,
+    defaultValue: '',
+  },
+  location: {
+    type: Sequelize.STRING,
+    defaultValue: '',
+  },
+  children: {
+    type: Sequelize.INTEGER,
+    defaultValue: 0,
+  },
+  wife: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false,
+  },
+  nationality: {
+    type: Sequelize.STRING,
+    defaultValue: '',
+  },
+  salary: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0,
+  },
+  class: {
+    type: Sequelize.INTEGER,
+    defaultValue: 1,
+  },
+  category: {
+    type: Sequelize.STRING,
+    defaultValue: 'E',
+  },
+  supervisor: {
+    type: Sequelize.STRING,
+    defaultValue: '',
+  },
+  job_title: {
+    type: Sequelize.STRING,
+    defaultValue: '',
+  },
+  job_type: {
+    type: Sequelize.STRING,
+    defaultValue: '',
+  },
+  job_description: {
+    type: Sequelize.STRING,
+    defaultValue: '',
+  },
+  job_start: {
+    type: Sequelize.STRING,
+    defaultValue: '',
+  },
+  points: {
+    type: Sequelize.INTEGER,
+    defaultValue: 0,
+  },
+  transportation: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  allowance_gasoline: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  allowance_mobile: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  allowance_work: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  allowance_Jerusalem: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  annual_rate: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  Deductions_health_insurance: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  Deductions_loans: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  Deductions_social_fund: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  uxemption_university: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  exemption_house: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  exemption_resident: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+});
+
+module.exports = employee;
