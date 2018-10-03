@@ -9,6 +9,7 @@ const router = express.Router();
 router.get('/', overview.get);
 router.get('/employees', employees.get);
 router.get('/addEmployee', addEmployee.get);
+router.post('/addEmployee', addEmployee.post);
 router.get('/setting', setting.get);
 
 module.exports = router;
