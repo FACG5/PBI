@@ -1,9 +1,11 @@
-module.exports = (connection, sequelize) => {
-  const purchaseBox = connection.define('purchase_box', {
-    name: {
-      type: sequelize.STRING,
-      allowNull: false,
-    },
-  });
-  return purchaseBox;
-};
+const Sequelize = require('sequelize');
+const sequelize = require('../config/connection');
+
+const purchaseBox = sequelize.define('purchase_box', {
+  name: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+});
+
+module.exports = purchaseBox;

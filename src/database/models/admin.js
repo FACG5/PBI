@@ -1,20 +1,15 @@
-module.exports = (connection, sequelize) => {
-  const admin = connection.define('admin', {
-    username: {
-      type: sequelize.STRING,
-      allowNull: false,
-      validate: {
-        len: {
-          args: [4, 10],
-          msg: 'رجاء ادخال اسم اكبر من 4 احرف',
-        },
-      },
-    },
-    password: {
-      type: sequelize.TEXT,
-      allowNull: false,
-    },
-  });
+const Sequelize = require('sequelize');
+const sequelize = require('../config/connection');
 
-  return admin;
-};
+const admin = sequelize.define('admin', {
+  username: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  password: {
+    type: Sequelize.TEXT,
+    allowNull: false,
+  },
+});
+
+module.exports = admin;

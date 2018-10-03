@@ -1,26 +1,27 @@
-module.exports = (connection, sequelize) => {
-  const fixedVarible = connection.define('fixed_varible', {
-    dolar: {
-      type: sequelize.DOUBLE,
-      defaultValue: 3.5794,
-    },
-    exemption_resident: {
-      type: sequelize.DOUBLE,
-      defaultValue: 3000.0,
-    },
-    tax_value: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.05,
-    },
-    contribution_institute: {
-      type: sequelize.DOUBLE,
-      defaultValue: 10.0,
-    },
-    contribution_employee: {
-      type: sequelize.DOUBLE,
-      defaultValue: 5.0,
-    },
-  });
+const Sequelize = require('sequelize');
+const sequelize = require('../config/connection');
 
-  return fixedVarible;
-};
+const fixedVarible = sequelize.define('fixed_varible', {
+  dolar: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 3.5794,
+  },
+  exemption_resident: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 3000.0,
+  },
+  tax_value: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.05,
+  },
+  contribution_institute: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 10.0,
+  },
+  contribution_employee: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 5.0,
+  },
+});
+
+module.exports = fixedVarible;
