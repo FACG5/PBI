@@ -83,7 +83,7 @@ const employee = sequelize.define('employee', {
     type: Sequelize.DOUBLE,
     defaultValue: 0.0,
   },
-  allowance_Jerusalem: {
+  allowance_jerusalem: {
     type: Sequelize.DOUBLE,
     defaultValue: 0.0,
   },
