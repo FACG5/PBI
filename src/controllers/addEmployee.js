@@ -1,7 +1,7 @@
 const employees = require('../database/models/employee');
 
 exports.get = (request, response) => {
-  response.render('addEmployee', { cssFile: ['employees', 'swal'], jsFile: ['addEmployee', 'dd'] });
+  response.render('addEmployee', { cssFile: ['employees', 'swal'], jsFile: ['addEmployee'] });
 };
 
 exports.post = (request, response, next) => {
