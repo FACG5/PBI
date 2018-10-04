@@ -1,12 +1,23 @@
 const employees = require('../database/models/employee');
 
 exports.get = (request, response) => {
-  response.render('addEmployee', { cssFile: 'employees' });
+  response.render('addEmployee', { cssFile: 'employees', jsFile: 'addEmployee' });
 };
 
-exports.post = (request, response) => {
+exports.post = (request, response, next) => {
   const newEmployeeData = request.body;
-  employees.create(newEmployeeData).then(() => {
-    response.status(201).redirect('/employees');
-  });
+  employees
+    .findAll({ where: { id_number: request.body.id_number } })
+    .then((result) => {
+      if (result.length === 0) {
+        employees
+          .create(newEmployeeData)
+          .then(() => {
+            response.status(200).send(JSON.stringify({ err: null, message: 'تم إدخال الموظف بنجاح , سيتم تحويلك  إلى قائمة الموظفين ' }));
+          })
+          .catch(err => next(err));
+      } else {
+        response.status(401).send(JSON.stringify({ err: 'تعذر الإدخال , رقم الهوية مستخدم مسبقا ! ' }));
+      }
+    }).catch(err => next(err));
 };
