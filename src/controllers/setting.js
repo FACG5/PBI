@@ -2,13 +2,13 @@ const bcryptjs = require('bcryptjs');
 const admin = require('../database/models/admin');
 
 exports.get = (req, res) => {
-  res.render('setting', { cssFile: 'panelSetting', jsFile: 'setting' });
+  res.render('setting', { cssFile: ['panelSetting', 'swal'], jsFile: ['setting'] });
 };
 
 exports.post = (req, res, next) => {
   const { currentPassword, username, password } = req.body;
   admin.findAll().then((result) => {
-    const { password: currentPasswordDatabase } = result[1].dataValues;
+    const { password: currentPasswordDatabase } = result[0].dataValues;
     bcryptjs.compare(currentPassword, currentPasswordDatabase, (err, result) => {
       if (err) return next(err);
       if (result === false) return res.send(JSON.stringify({ err: 'خطأ في الباسوورد الحالي !' }));

@@ -2,25 +2,37 @@
 <hr>
 <div class='box'>
     <ul>
+        {{#each result}}
         <li>
             <span>سعر الدولار</span>
-            <span>3.75</span>
+            <span>{{dataValues.dolar}}</span>
         </li>
         <hr>
         <li>
-            <span>سعر الدولار</span>
-            <span>3.75</span>
+            <span>القيمة الضريبية</span>
+            <span>{{dataValues.taxValue}}</span>
         </li>
         <hr>
         <li>
-            <span>سعر الدولار</span>
-            <span>3.75</span>
+            <span>نسبة الادخار</span>
+            <span>{{dataValues.savingRatio}}</span>
         </li>
         <hr>
         <li>
-            <span>سعر الدولار</span>
-            <span>3.75</span>
+            <span>نسبة مساهمة المعهد في الضمان</span>
+            <span>{{dataValues.contributionInstitute}}</span>
         </li>
         <hr>
+        <li>
+            <span>نسبة مساهمة الموظف في الضمان</span>
+            <span>{{dataValues.contributionEmployee}}</span>
+        </li>
+        <hr>
+        <li>
+            <span>اعفاء مقيم</span>
+            <span>{{dataValues.exemptionResident}}</span>
+        </li>
+        <hr>
+        {{/each}}
     </ul>
 </div>
