@@ -15,5 +15,6 @@ router.get('/employees', employees.get);
 router.get('/addEmployee', addEmployee.get);
 router.post('/addEmployee', convertToSnake, addEmployee.post);
 router.get('/carts', carts.get);
+router.delete('/carts', carts.delete);
 
 module.exports = router;
