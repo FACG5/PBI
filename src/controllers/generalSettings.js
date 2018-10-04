@@ -16,6 +16,6 @@ exports.get = (req, res) => {
 exports.post = (req, res) => {
   const input = req.body;
   fixedVariables.update(input, { where: { id: 1 } }).then(() => {
-    res.redirect('/generalsetting');
+    res.redirect('/generalSetting');
   });
 };
