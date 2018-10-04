@@ -22,6 +22,10 @@ const fixedVarible = sequelize.define('fixed_varible', {
     type: Sequelize.DOUBLE,
     defaultValue: 5.0,
   },
+  saving_ratio: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.04,
+  },
 });
 
 module.exports = fixedVarible;
