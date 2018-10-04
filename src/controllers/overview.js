@@ -9,6 +9,6 @@ exports.get = (req, res) => {
         ['contribution_employee', 'contributionEmployee'], ['saving_ratio', 'savingRatio']],
     },
   ).then((result) => {
-    res.render('overview', { result, cssFile: 'overView' });
+    res.render('overview', { result, cssFile: ['overView'] });
   });
 };
