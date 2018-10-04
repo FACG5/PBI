@@ -1,7 +1,7 @@
 <h1 class='title'>إضافة موظف جديد</h1>
 <hr>
 <div class="box">
-    <form action="/addEmployee" method="post" id='newEmpForm'>
+    <form id='newEmpForm'>
         <ul>
             <li>
                 <span>الاسم رباعي</span>
@@ -9,7 +9,7 @@
             </li>
             <li>
                 <span>رقم الهوية</span>
-                <input name='idNumber' type="text" required>
+                <input name='idNumber' type="text">
             </li>
             <li>
                 <span>تاريخ الميلاد</span>
@@ -42,17 +42,17 @@
             <li>
                 <span>الفئة</span>
                 <select name = 'category'>
-                    <option value="0">A</option>
-                    <option value="1">B</option>
-                    <option value="2">C</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
                 </select>
             </li>
             <li>
                 <span name = 'class' >الدرجة</span>
                 <select>
-                    <option value="0">1</option>
-                    <option value="1">2</option>
-                    <option value="2">3</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
                 </select>
             </li>
             <li>
