@@ -1,13 +1,13 @@
 const employees = require('../database/models/employee');
 
 exports.get = (request, response) => {
-  response.render('addEmployee', { cssFile: 'employees', jsFile: 'addEmployee' });
+  response.render('addEmployee', { cssFile: ['employees', 'swal'], jsFile: ['addEmployee', 'dd'] });
 };
 
 exports.post = (request, response, next) => {
   const newEmployeeData = request.body;
   employees
-    .findAll({ where: { id_number: request.body.id_number } })
+    .findAll({ where: { id_number: newEmployeeData.id_number } })
     .then((result) => {
       if (result.length === 0) {
         employees
