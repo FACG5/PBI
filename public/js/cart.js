@@ -50,10 +50,10 @@ add.addEventListener('click', () => {
   }).then(result => result.json())
     .then((result) => {
       if (result.err) {
-        swal('ﻻ يمكن الإضافة', result.err, 'failed');
+        swal('', result.err, 'error');
       } else {
         swal('تم', result.message, 'success').then(() => {
-          window.location.href('/carts');
+          window.location.href = '/carts';
         });
       }
     });

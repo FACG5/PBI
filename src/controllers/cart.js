@@ -14,9 +14,20 @@ exports.delete = (req, res, next) => {
   });
 };
 
-exports.post = (req, res, next) => {
+exports.post = (req, res) => {
   const purchaseBoxData = req.body;
-  purchaseBox.create(purchaseBoxData).then(() => {
-    res.status(200).send(JSON.stringify({ err: null, message: 'تمت عملية الإضافة' }));
-  });
+  if (purchaseBoxData.name.trim()) {
+    purchaseBox.findAll({ where: { name: purchaseBoxData.name } })
+      .then((result) => {
+        if (result.length === 0) {
+          purchaseBox.create(purchaseBoxData).then(() => {
+            res.status(200).send(JSON.stringify({ err: null, message: 'تمت عملية الإضافة' }));
+          });
+        } else {
+          res.status(401).send(JSON.stringify({ err: 'الاسم موجود مسبقا' }));
+        }
+      });
+  } else {
+    res.status(401).send(JSON.stringify({ err: 'الرجاء إدخال بيانات' }));
+  }
 };
