@@ -1,0 +1,43 @@
+
+.swal2-popup .swal2-styled.swal2-confirm {
+  box-shadow: 0px 0px 5px #201a3a !important;
+  font-weight: bold !important;
+  text-align: center !important;
+  height: 32px !important;
+  font-size: 0.8rem !important;
+  background-color: #ffffff !important;
+  color: #201a3a !important;
+  width: 80px !important;
+  transition-duration: 0.4s !important;
+}
+.swal2-popup {
+  width: 25em !important;
+  max-width: 100%;
+  padding: 1.25em;
+  border-radius: 1.3125em !important;
+  background: #201a3a !important;
+  font-family: cairo !important;
+  font-size: 1rem !important;
+  color: #fff !important;
+}
+
+.swal2-popup .swal2-title {
+  color: #ffffff !important;
+  font-size: 1.875em;
+  font-weight: 600;
+}
+
+.swal2-popup #swal2-content {
+  color: #fff !important;
+}
+.swal2-icon.swal2-error {
+  border-color: red !important;
+}
+.swal2-icon.swal2-error [class^="swal2-x-mark-line"] {
+
+  background-color: #ff0000 !important;
+}
+.swal2-show {
+  -webkit-animation: swal2-show 0.9s !important;
+  animation: swal2-show 0.9s !important;
+}

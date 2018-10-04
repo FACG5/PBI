@@ -9,13 +9,13 @@ exports.get = (req, res) => {
         ['contribution_employee', 'contributionEmployee'], ['saving_ratio', 'savingRatio']],
     },
   ).then((result) => {
-    res.render('generalSettings', { result, cssFile: 'generalSettings' });
+    res.render('generalSettings', { result, cssFile: ['generalSettings'] });
   });
 };
 
 exports.post = (req, res) => {
   const input = req.body;
   fixedVariables.update(input, { where: { id: 1 } }).then(() => {
-    res.redirect('/generalsetting');
+    res.redirect('/generalSetting');
   });
 };
