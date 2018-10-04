@@ -6,6 +6,7 @@ const addEmployee = require('./addEmployee');
 const carts = require('./cart');
 const setting = require('./setting');
 const convertToSnake = require('../middleware/convertCamelToSnake');
+const editEmployee = require('./editEmployee');
 
 const router = express.Router();
 
@@ -15,6 +16,7 @@ router.post('/generalSetting', convertToSnake, generalSettings.post);
 router.get('/employees', employees.get);
 router.get('/addEmployee', addEmployee.get);
 router.post('/addEmployee', convertToSnake, addEmployee.post);
+router.put('/employee', convertToSnake, editEmployee.put);
 router.get('/carts', carts.get);
 router.get('/setting', setting.get);
 router.post('/setting', setting.post);
