@@ -1,4 +1,6 @@
 const trash = document.querySelectorAll('#trash');
+const add = document.getElementById('add');
+const inputField = document.querySelector('#inputText');
 
 trash.forEach((element) => {
   element.addEventListener('click', () => {
@@ -32,4 +34,27 @@ trash.forEach((element) => {
       }
     });
   });
+});
+
+
+add.addEventListener('click', () => {
+  const purchaseBoxData = {
+    name: inputField.value,
+  };
+  fetch('/carts', {
+    method: 'POST',
+    body: JSON.stringify(purchaseBoxData),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  }).then(result => result.json())
+    .then((result) => {
+      if (result.err) {
+        swal('ﻻ يمكن الإضافة', result.err, 'failed');
+      } else {
+        swal('تم', result.message, 'success').then(() => {
+          window.location.href('/carts');
+        });
+      }
+    });
 });

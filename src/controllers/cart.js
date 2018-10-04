@@ -8,8 +8,15 @@ exports.get = (req, res) => {
 
 exports.delete = (req, res, next) => {
   purchaseBox.destroy({ where: { id: req.body.boxId } }).then(() => {
-    res.status(200).send(JSON.stringify({ err: null, message: 'delete done' }));
+    res.status(200).send(JSON.stringify({ err: null, message: 'تمت عملية الحذف' }));
   }).catch((error) => {
     next(error);
+  });
+};
+
+exports.post = (req, res, next) => {
+  const purchaseBoxData = req.body;
+  purchaseBox.create(purchaseBoxData).then(() => {
+    res.status(200).send(JSON.stringify({ err: null, message: 'تمت عملية الإضافة' }));
   });
 };
