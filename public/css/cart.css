@@ -40,7 +40,7 @@
 .box button {
     box-shadow: -1px 1px 3px 0px #201a3a;
     margin-top: 15px;
-    float: left;
+    /* float: left; */
     border: none;
     background: #201a3a;
     color: #ffffff;
@@ -87,4 +87,9 @@ table tr:last-child td:first-child {
 
 table tr:last-child td:last-child {
     border-bottom-left-radius: 6px;
+}
+
+.box .inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
