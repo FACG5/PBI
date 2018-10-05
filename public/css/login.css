@@ -1,0 +1,9 @@
+.login {
+    background: red;
+    height: 100%;
+}
+.login .box {
+    /* text-align: center; */
+    background: #FFF;
+    margin: 0 auto;
+}
