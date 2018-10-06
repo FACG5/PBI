@@ -24,7 +24,7 @@ exports.post = (req, res) => {
               res.status(401).send(JSON.stringify({ err: 'حاول مرة أخرى' }));
             } else {
               res.cookie('jwt', resultCookie, { maxAge: 900000 });
-              res.status(200).send(JSON.stringify({ err: null, message: 'تم تسجيل الدخول' }));
+              res.status(200).send(JSON.stringify({ err: null, message: 'تم تسجيل الدخول بنجاح , سيتم تحويلك إلى الصفحة الرئيسية' }));
             }
           });
         }

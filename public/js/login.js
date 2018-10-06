@@ -18,7 +18,9 @@ loginButton.addEventListener('click', () => {
       if (result.err) {
         swal('', result.err, 'error');
       } else {
-        window.location.href = '/';
+        swal('', result.message, 'success').then(() => {
+          window.location.href = '/';
+        });
       }
     });
 });
