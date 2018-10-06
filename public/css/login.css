@@ -34,6 +34,7 @@ button {
     padding: 10px 19px;
     margin-top: 20px;
     border: none;
+    outline: none;
 }
 
 img {
