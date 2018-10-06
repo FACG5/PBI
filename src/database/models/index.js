@@ -22,8 +22,6 @@ purchasesEmployee.belongsTo(purchaseBox, {
   onDelete: 'CASCADE', foreignKey: 'purchaseBox_id', targetKey: 'id',
 });
 purchaseBox.hasMany(purchasesEmployee, { foreignKey: 'purchaseBox_id' });
-
-
 module.exports = {
   admin,
   certificate,

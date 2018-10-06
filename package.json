@@ -6,6 +6,7 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "camelcase-keys-deep": "^0.1.0",
+    "change-case": "^3.0.2",
     "cookie-parser": "^1.4.3",
     "env2": "^2.2.2",
     "express": "^4.16.3",
@@ -15,6 +16,7 @@
     "pg": "^7.4.3",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.39.0",
+    "snakecase-keys": "^1.2.0",
     "sweetalert2": "^7.28.4"
   },
   "devDependencies": {
