@@ -12,6 +12,7 @@
     "cookie-parser": "^1.4.3",
     "express-session": "^1.15.6",
     "js-alert": "^1.0.4",
+    "jsonwebtoken": "^8.3.0",
     "pg": "^7.4.3",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.39.0",
