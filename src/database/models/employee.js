@@ -39,6 +39,10 @@ const employee = sequelize.define('employee', {
     type: Sequelize.INTEGER,
     defaultValue: 1,
   },
+  social_status: {
+    type: Sequelize.STRING,
+    defaultValue: '',
+  },
   category: {
     type: Sequelize.STRING,
     defaultValue: 'E',

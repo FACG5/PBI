@@ -9,52 +9,16 @@ const report = sequelize.define('report', {
   id_number: {
     type: Sequelize.STRING,
   },
-  children: {
+  child_allownace: {
     type: Sequelize.INTEGER,
     defaultValue: 0,
   },
-  wife: {
-    type: Sequelize.BOOLEAN,
-    defaultValue: false,
-  },
-  nationality: {
-    type: Sequelize.STRING,
-    defaultValue: '',
+  wife_allowance: {
+    type: Sequelize.INTEGER,
+    defaultValue: 0,
   },
   salary: {
     type: Sequelize.DOUBLE,
-  },
-  class: {
-    type: Sequelize.INTEGER,
-    defaultValue: 1,
-  },
-  category: {
-    type: Sequelize.STRING,
-    defaultValue: 'E',
-  },
-  supervisor: {
-    type: Sequelize.STRING,
-    defaultValue: '',
-  },
-  job_title: {
-    type: Sequelize.STRING,
-    defaultValue: '',
-  },
-  job_type: {
-    type: Sequelize.STRING,
-    defaultValue: '',
-  },
-  job_description: {
-    type: Sequelize.STRING,
-    defaultValue: '',
-  },
-  job_start: {
-    type: Sequelize.DATEONLY,
-    defaultValue: Sequelize.now,
-  },
-  points: {
-    type: Sequelize.INTEGER,
-    defaultValue: 0,
   },
   transportation: {
     type: Sequelize.DOUBLE,
@@ -69,6 +33,14 @@ const report = sequelize.define('report', {
     defaultValue: 0.0,
   },
   allowance_work: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  allowance_other: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  total_allownace: {
     type: Sequelize.DOUBLE,
     defaultValue: 0.0,
   },
@@ -108,10 +80,6 @@ const report = sequelize.define('report', {
     type: Sequelize.DOUBLE,
     defaultValue: 0.0,
   },
-  Institute_contribution: {
-    type: Sequelize.DOUBLE,
-    defaultValue: 0.0,
-  },
   employee_contribution: {
     type: Sequelize.DOUBLE,
     defaultValue: 0.0,
@@ -128,15 +96,15 @@ const report = sequelize.define('report', {
     type: Sequelize.DOUBLE,
     defaultValue: 0.0,
   },
-  exemption_transportation: {
+  transportations_exemptions: {
     type: Sequelize.DOUBLE,
     defaultValue: 0.0,
   },
-  exemption_boxes: {
+  boxes_exemptions: {
     type: Sequelize.DOUBLE,
     defaultValue: 0.0,
   },
-  exemption_total: {
+  total_exemptions: {
     type: Sequelize.DOUBLE,
     defaultValue: 0.0,
   },
@@ -144,15 +112,15 @@ const report = sequelize.define('report', {
     type: Sequelize.DOUBLE,
     defaultValue: 0.0,
   },
-  section_taxes_1: {
+  section_taxes1: {
     type: Sequelize.DOUBLE,
     defaultValue: 0.0,
   },
-  section_taxes_2: {
+  section_taxes2: {
     type: Sequelize.DOUBLE,
     defaultValue: 0.0,
   },
-  section_taxes_3: {
+  section_taxes3: {
     type: Sequelize.DOUBLE,
     defaultValue: 0.0,
   },
@@ -160,7 +128,11 @@ const report = sequelize.define('report', {
     type: Sequelize.DOUBLE,
     defaultValue: 0.0,
   },
-  total_contribution: {
+  contribution_of_employee: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  contribution_of_institute: {
     type: Sequelize.DOUBLE,
     defaultValue: 0.0,
   },
