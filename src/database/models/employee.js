@@ -15,6 +15,10 @@ const employee = sequelize.define('employee', {
     type: Sequelize.STRING,
     defaultValue: '',
   },
+  social_status: {
+    type: Sequelize.STRING,
+    defaultValue: '',
+  },
   location: {
     type: Sequelize.STRING,
     defaultValue: '',
