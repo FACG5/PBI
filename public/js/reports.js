@@ -1,6 +1,6 @@
 const createButton = document.getElementById('create');
 const date = document.getElementById('month');
-createButton.addEventListener('click', (e) => {
+createButton.addEventListener('click', () => {
   const dateValue = date.value;
   const dateObject = { dateValue };
   fetch('/reports', {

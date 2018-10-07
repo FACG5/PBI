@@ -20,6 +20,7 @@ const contributionsOperations = (bonus, contributionEmployee, contributionInstit
     + transportation
     + allowanceJerusalem)
   * contributionInstitute;
+
   const contributionOfEmployee = (childAllownace
     + wifeAllowance
     + allowanceGasoline
@@ -28,6 +29,7 @@ const contributionsOperations = (bonus, contributionEmployee, contributionInstit
     + allowanceJerusalem
     + salary)
   * contributionEmployee;
+
   const contributions = { contributionOfInstitute, contributionOfEmployee };
   return contributions;
 };
@@ -50,6 +52,7 @@ const deductionOperations = (bonus, deductions, finalExemptions, variables) => {
     deductionsLoans,
     purchaseBoxes,
   } = employeeDeductions;
+
   const { contributionOfInstitute, contributionOfEmployee } = contributionsOperations(bonus, contributionEmployee, contributionInstitute);
   employeeDeductions.contributionOfEmployee = contributionOfEmployee;
   employeeDeductions.contributionOfInstitute = contributionOfInstitute;
@@ -60,6 +63,7 @@ const deductionOperations = (bonus, deductions, finalExemptions, variables) => {
       + deductionsSocialFund
       + deductionsLoans
       + purchaseBoxes;
+
   return employeeDeductions;
 };
 
