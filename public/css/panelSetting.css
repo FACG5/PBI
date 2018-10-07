@@ -1,0 +1,38 @@
+.box ul{
+    list-style: none;
+    padding: 30px 54px;;
+}
+.box ul li{
+    padding: 15px 10px;
+    font-size: 15px;
+    color: #201a3a;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.box ul li input {
+    border: none;
+    border-radius: 5px;
+    box-shadow: -1px 1px 3px 0px #201a3a;
+    width: 168px;
+    padding: 0px 10px;
+    background: none;
+}
+.box button {
+    box-shadow: -1px 1px 3px 0px #201a3a;
+    margin-top: 15px;
+    float: left;
+    border: none;
+    background: #201a3a;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 5px 10px;
+    width: 100px;
+    font-weight: bold;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+.box button:hover {
+    background-color: #3f3663;
+}

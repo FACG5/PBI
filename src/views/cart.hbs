@@ -1,17 +1,20 @@
 <h1 class='title'>صناديق المشتريات</h1>
 <hr>
 <div class="box">
+    <div class="inputs">
+        <input type="text" placeholder="صندوق المشتريات" name="employeename" id="inputText">
+        <button id="add">إضافة</button>
+    </div>
     <table>
         <tr>
             <th>اسم صندوق المشتريات</th>
             <th>حذف</th>
         </tr>
-        {{#each result }}
+        {{#each result}}
         <tr>
             <td>{{dataValues.name}}</td>
-            <td><i class="fas fa-trash-alt"></i></td>
+            <td><i class="fas fa-trash-alt" id="trash" boxId="{{dataValues.id}}"></i></td>
         </tr>
     {{/each}}
     </table>
-    <button>إضافة</button>
 </div>
