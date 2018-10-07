@@ -7,7 +7,7 @@ const carts = require('./cart');
 const setting = require('./setting');
 const convertToSnake = require('../middleware/convertCamelToSnake');
 const editEmployee = require('./editEmployee');
-const error = require('./errors');
+const employeeDetalis = require('./employeeDetails');
 const logout = require('./logout');
 const login = require('./login');
 
@@ -24,12 +24,10 @@ router.get('/logout', logout.get);
 router.get('/login', login.get);
 router.post('/login', login.post);
 router.get('/carts', carts.get);
+router.get('/employee/:id', employeeDetalis.get);
 router.get('/setting', setting.get);
 router.post('/setting', setting.post);
 router.delete('/carts', carts.delete);
 router.post('/carts', carts.post);
-
-router.use(error.client);
-router.use(error.server);
 
 module.exports = router;
