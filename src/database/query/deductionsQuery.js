@@ -5,7 +5,7 @@ const deductionsQuery = (employee, variables) => new Promise((resolve, reject) =
   const { id } = employee;
   sequelize
     .query(
-      `select deductions_health_insurance,deductions_loans,deductions_social_fund,(salary*${savingRatio}) AS saving ,(select SUM(payment) AS purchase_boxes from purchases_employees where employee_id = ${id})`
+      `select deductions_health_insurance,deductions_loans,deductions_social_fund,(salary*${savingRatio}) AS saving ,(select coalesce (SUM(payment),0) AS purchase_boxes from purchases_employees where employee_id = ${id})`
           + `from employees where id = ${id}`,
     )
     .then((result) => {

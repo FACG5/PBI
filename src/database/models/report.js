@@ -137,7 +137,7 @@ const report = sequelize.define('report', {
     defaultValue: 0.0,
   },
   date: {
-    type: Sequelize.DATEONLY,
+    type: Sequelize.STRING,
   },
 });
 
