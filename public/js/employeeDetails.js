@@ -1,5 +1,6 @@
 const links = document.querySelectorAll('.tablink');
 const singleBody = document.querySelectorAll('.singleBody');
+const btnSave = document.querySelectorAll('.btn-save');
 
 const sendData = (form) => {
   const formData = new FormData(form);
@@ -34,8 +35,8 @@ const show = (event, divName) => {
 };
 
 const editBtn = document.querySelectorAll('.editbtn');
-editBtn.forEach((x) => {
-  x.addEventListener('click', (event) => {
+editBtn.forEach((item) => {
+  item.addEventListener('click', (event) => {
     const divParent = event.target.parentElement;
     const elements = divParent.querySelectorAll('.input-field');
     const btnSave = divParent.querySelector('.btn-save');
@@ -56,9 +57,8 @@ editBtn.forEach((x) => {
   });
 });
 
-const btnSave = document.querySelectorAll('.btn-save');
-btnSave.forEach((x) => {
-  x.addEventListener('click', (event) => {
+btnSave.forEach((item) => {
+  item.addEventListener('click', (event) => {
     const divParent = event.target.parentElement;
     const elements = divParent.querySelectorAll('.input-field-editable');
     const btnEdit = divParent.querySelector('.editbtn');
