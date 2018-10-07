@@ -7,12 +7,9 @@ const carts = require('./cart');
 const setting = require('./setting');
 const convertToSnake = require('../middleware/convertCamelToSnake');
 const editEmployee = require('./editEmployee');
-<<<<<<< HEAD
 const employeeDetalis = require('./employeeDetails');
-=======
 const logout = require('./logout');
 const login = require('./login');
->>>>>>> 138ed3e8a58fd4b4be70fafa99db2095eb31957e
 
 const router = express.Router();
 
