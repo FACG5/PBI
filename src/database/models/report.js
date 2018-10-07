@@ -1,180 +1,144 @@
-module.exports = (connection, sequelize) => {
-  const report = connection.define('report', {
-    name: {
-      type: sequelize.STRING,
-      defaultValue: '',
-    },
-    id_number: {
-      type: sequelize.STRING,
-      unique: true,
-    },
-    children: {
-      type: sequelize.INTEGER,
-      defaultValue: 0,
-    },
-    wife: {
-      type: sequelize.BOOLEAN,
-      defaultValue: false,
-    },
-    nationality: {
-      type: sequelize.STRING,
-      defaultValue: '',
-    },
-    salary: {
-      type: sequelize.DOUBLE,
-    },
-    class: {
-      type: sequelize.INTEGER,
-      defaultValue: 1,
-    },
-    category: {
-      type: sequelize.STRING,
-      defaultValue: 'E',
-    },
-    supervisor: {
-      type: sequelize.STRING,
-      defaultValue: '',
-    },
-    job_title: {
-      type: sequelize.STRING,
-      defaultValue: '',
-    },
-    job_type: {
-      type: sequelize.STRING,
-      defaultValue: '',
-    },
-    job_description: {
-      type: sequelize.STRING,
-      defaultValue: '',
-    },
-    job_start: {
-      type: sequelize.DATEONLY,
-      defaultValue: sequelize.now,
-    },
-    points: {
-      type: sequelize.INTEGER,
-      defaultValue: 0,
-    },
-    transportation: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    allowance_gasoline: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    allowance_mobile: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    allowance_work: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    allowance_Jerusalem: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    annual_rate: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    Deductions_health_insurance: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    Deductions_loans: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    Deductions_social_fund: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    uxemption_university: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    exemption_house: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    exemption_resident: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    purchase_boxes: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    savings: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    Institute_contribution: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    employee_contribution: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    total_Deductions: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    final_salary: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    exemption_university: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    exemption_transportation: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    exemption_boxes: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    exemption_total: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    salary_taxes: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    section_taxes_1: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    section_taxes_2: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    section_taxes_3: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    section_taxes_total: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    total_contribution: {
-      type: sequelize.DOUBLE,
-      defaultValue: 0.0,
-    },
-    date: {
-      type: sequelize.DATEONLY,
-    },
-  });
+const Sequelize = require('sequelize');
+const sequelize = require('../config/connection');
 
-  report.associate = (models) => {
-    report.belongsTo(models.employee);
-  };
+const report = sequelize.define('report', {
+  name: {
+    type: Sequelize.STRING,
+    defaultValue: '',
+  },
+  id_number: {
+    type: Sequelize.STRING,
+  },
+  child_allownace: {
+    type: Sequelize.INTEGER,
+    defaultValue: 0,
+  },
+  wife_allowance: {
+    type: Sequelize.INTEGER,
+    defaultValue: 0,
+  },
+  salary: {
+    type: Sequelize.DOUBLE,
+  },
+  transportation: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  allowance_gasoline: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  allowance_mobile: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  allowance_work: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  allowance_other: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  total_allownace: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  allowance_jerusalem: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  annual_rate: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  deductions_health_insurance: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  deductions_loans: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  deductions_social_fund: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  exemption_house: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  exemption_resident: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  purchase_boxes: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  savings: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  employee_contribution: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  total_deductions: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  final_salary: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  exemption_university: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  transportations_exemptions: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  boxes_exemptions: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  total_exemptions: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  salary_taxes: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  section_taxes1: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  section_taxes2: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  section_taxes3: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  section_taxes_total: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  contribution_of_employee: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  contribution_of_institute: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  date: {
+    type: Sequelize.STRING,
+  },
+});
 
-  return report;
-};
+module.exports = report;
