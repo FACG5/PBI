@@ -1,12 +1,21 @@
 const { employee } = require('../database/models');
-const convertSnakeToCamel = require("./helper/convertSnakeToCamel");
+const convertSnakeToCamel = require('./helper/convertSnakeToCamel');
 
-exports.get = async (req, res) => {
+exports.get = async (req, res, next) => {
   try {
-    let employeeData = (await employee.findById(req.params.id)).dataValues;
-    employeeData = convertSnakeToCamel(employeeData);
-    res.render('employeeDetails', { obj: employeeData, id: req.params.id, cssFile: ['employeeDetails'], jsFile: ['employeeDetails'] });
-  } catch (error) {
-    res.sendStatus(404);
+    const { id } = req.params;
+    const employeeData = await employee.findById(id);
+    if (!employeeData) {
+      res.render('employeeDetails', {
+        err: 'Employee Not Found', cssFile: ['employeeDetails'], jsFile: ['employeeDetails'],
+      });
+    } else {
+      const employeeDataCamel = convertSnakeToCamel(employeeData.dataValues);
+      res.render('employeeDetails', {
+        err: null, obj: employeeDataCamel, id: req.params.id, cssFile: ['employeeDetails'], jsFile: ['employeeDetails'],
+      });
+    }
+  } catch (err) {
+    next(err);
   }
 };
