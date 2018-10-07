@@ -1,6 +1,6 @@
 const fixedVariables = require('../database/models/fixedVarible');
 
-exports.get = (req, res) => {
+exports.get = (req, res, next) => {
   fixedVariables.findAll(
     {
       attributes:
@@ -9,8 +9,8 @@ exports.get = (req, res) => {
         ['contribution_employee', 'contributionEmployee'], ['saving_ratio', 'savingRatio']],
     },
   ).then((result) => {
-    res.render('generalSettings', { result, cssFile: ['generalSettings'], jsFile: ['generalSetting'] });
-  });
+    res.render('generalSettings', { result, cssFile: ['generalSettings'] });
+  }).catch(err => next(err));
 };
 
 exports.post = (req, res, next) => {
