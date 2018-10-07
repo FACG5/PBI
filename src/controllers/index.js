@@ -20,5 +20,7 @@ router.put('/employee', convertToSnake, editEmployee.put);
 router.get('/carts', carts.get);
 router.get('/setting', setting.get);
 router.post('/setting', setting.post);
+router.delete('/carts', carts.delete);
+router.post('/carts', carts.post);
 
 module.exports = router;
