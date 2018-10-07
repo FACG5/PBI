@@ -5,6 +5,7 @@ const admin = require('./../database/models/admin');
 exports.get = (req, res) => {
   res.render('login', {
     layout: 'login',
+    cssFile: ['public', 'login', 'swal'],
   });
 };
 
