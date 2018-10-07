@@ -1,0 +1,265 @@
+<h1 class='title'>{{obj.name}}</h1>
+<hr>
+<div class="box">
+  <div class="bar">
+    <ul id="ss">
+      <li class="tabActive tablink" onclick="show(event,'div1')">تفاصيل شخصية</li>
+      <li class="tablink" onclick="show(event,'div2')">عﻻوات</li>
+      <li class="tablink" onclick="show(event,'div3')">اقتطاعات</li>
+      <li class="tablink" onclick="show(event,'div4')">اعفاءات</li>
+      <li class="tablink" onclick="show(event,'div5')">تقارير شهرية</li>
+    </ul>
+  </div>
+  <div class="tabBody">
+    <div class="singleBody first-box" id="div1">
+      <form class="form-update" id="form-div1">
+        <ul>
+          <li class="full">
+            <span>الاسم رباعي</span>
+            <div>
+              <input name="name" value="{{obj.name}}" type="text" id="input-field-big" class="input-field input-field-div1" readonly>
+            </div>
+          </li>
+          <li>
+            <span>رقم الهوية</span>
+            <div><input value="{{obj.idNumber}}" type="text" name="idNamber" class="input-field input-field-div1" readonly></div>
+          </li>
+          <li>
+            <span>تاريخ الميلاد</span>
+            <div><input name="birthday" value="{{obj.birthday}}" type="text" class="input-field input-field-div1" readonly></div>
+          </li>
+          <li>
+            <span>مكان السكن</span>
+            <div><input name="location" value="{{obj.location}}" type="text" class="input-field input-field-div1" readonly></div>
+          </li>
+          <li>
+            <span>الحالة الاجتماعية</span>
+            <div>
+              <span class="input-field-div1" readonly> اعزب</span>
+              <select name="socialStatus" class='none status' disabled>
+
+                <option value="أعزب">أعزب</option>
+                <option value="متزوج">متزوج</option>
+                <option value="مطلق">مطلق</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <span>عدد الأبناء</span>
+            <div><input value="{{obj.children}}" type="number" name="childern" class="input-field input-field-div1" readonly></div>
+          </li>
+          <li>
+            <span>الجنسية</span>
+            <div><input value="{{obj.nationality}}" type="text" name="nationality" class="input-field input-field-div1" readonly></div>
+          </li>
+          <li>
+            <span>الوظيفة</span>
+            <div><input value="{{obj.jobTitle}}" type="text" name="jobTitle" class="input-field input-field-div1" readonly></div>
+          </li>
+          <li>
+            <span>الفئة</span>
+            <div>
+              <span class="input-field-div1">{{obj.category}} </span>
+              <select name='category' class='none status' disabled>
+                <option value="{{obj.category}}" hidden="hidden" selected="selected">{{obj.category}}</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+              </select></div>
+          </li>
+          <li>
+            <span>الدرجة</span>
+            <div>
+              <span class="input-field-div1">{{obj.class}} </span>
+              <select name="class" class='none status' disabled>
+                <option selected="selected" value="{{obj.class}}">{{obj.class}}</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <span>عمل الزوجة</span>
+            <div>
+              <span class="input-field-div1">{{#if obj.wife}}تعمل{{else}}لاتعمل{{/if}}</span>
+              <select name='wife' class='none status' disabled>
+                <option value="{{obj.wife}}" hidden="hidden" selected="selected">{{#if obj.wife}}تعمل{{else}}لاتعمل{{/if}}</option>
+                <option value="0">تعمل</option>
+                <option value="1">ﻻ تعمل</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <span>الراتب الأساسي</span>
+            <div><input value="{{obj.salary}}" type="text" name="salary" class="input-field input-field-div1" readonly></div>
+          </li>
+          <li>
+            <span>تاريخ التعيين</span>
+            <div><input value="{{obj.jobStart}}" type="text" name="jobStart" class="input-field input-field-div1" readonly></div>
+          </li>
+          <li>
+            <span>نوع الوظيفة</span>
+            <div><input value="{{obj.jobType}}" type="text" name="jobType" class="input-field input-field-div1"></div>
+          </li>
+          <li class="full">
+            <span>المسؤول المباشر</span>
+            <div><input value="{{obj.supervisor}}" type="text" class="input-field input-field-div1" name="supervisor" readonly></div>
+          </li>
+          <li class="full">
+            <span>الوصف الوظيفي للموظف</span>
+            <div><span>تحميل</span></div>
+          </li>
+          <li class="full">
+            <span>الشهادات العلمية</span>
+            <div>
+              <span><a href="#">علوم بيئة</a></span>
+              <span>علوم بيئة</span>
+              <span>علوم بيئة</span>
+            </div>
+
+          </li>
+        </ul>
+        <input value="{{id}}" name="id" class="none">
+      </form>
+      <button class="editbtn">تعديل</button>
+      <button class="btn-save none">حفظ</button>
+    </div>
+    <div class="singleBody first-box" id="div2">
+      <form class="form-update" id="form-div2">
+        <ul>
+          <li>
+            <span>علاوة زوجة</span>
+            <div><span>30$</span></div>
+          </li>
+          <li>
+            <span>علاوة الاولاد</span>
+            <div><span>15$</span></div>
+          </li>
+          <li>
+            <span>المواصلات</span>
+            <div><input name="transportation" value="{{obj.transportation}}" type="text" class="input-field input-field-div2"
+                readonly></div>
+          </li>
+          <li>
+            <span>بدل بنزين</span>
+            <div><input value="{{obj.allowanceGasoline}}" name="allowanceGasoline" type="text" class="input-field input-field-div2"
+                readonly></div>
+          </li>
+          <li>
+            <span>بدل جوال</span>
+            <div><input name="allowanceMobile" value="{{obj.allowanceMobile}}" type="number" class="input-field input-field-div2"
+                readonly></div>
+          </li>
+          <li>
+            <span>القدس وأخرى</span>
+            <div><input name="allowanceJerusalem" value="{{obj.allowanceJerusalem}}" type="text" class="input-field input-field-div2"
+                readonly></div>
+          </li>
+          <li>
+            <span>بدل المهام</span>
+            <div><input value="{{obj.allowanceWork}}" type="text" name="allowanceWork" class="input-field input-field-div2"
+                readonly></div>
+          </li>
+          <li>
+            <span>نقاط الموظف</span>
+            <div><input value="{{obj.points}}" type="text" name="point" class="input-field input-field-div2" readonly></div>
+          </li>
+          <li>
+            <span>نسبة العلاوة سنوية</span>
+            <div><input value="{{obj.allowanceWork}}$" type="text" name="allowanceWork" class="input-field input-field-div2"
+                readonly></div>
+          </li>
+          <li>
+            <span>الراتب بعد العلاوات</span>
+            <div><span>500$</span></div>
+          </li>
+          <li>
+            <span>الراتب بالشيقل</span>
+            <div><span>500$</span></div>
+          </li>
+        </ul>
+        <input value="{{id}}" name="id" class="none">
+      </form>
+      <button class="editbtn">تعديل</button>
+      <button class="btn-save none">حفظ</button>
+    </div>
+    <div class="singleBody first-box" id="div3">
+      <form class="form-update" id="form-div3">
+        <ul>
+          <li>
+            <span>تامين صحي</span>
+            <div><input value="{{obj.deductionsHealthInsurance}}" type="text" name="deductionsHealthInsurance" class="input-field input-field-div3"
+                readonly></div>
+          </li>
+          <li>
+            <span>قروض وسلف</span>
+            <div><input value="{{obj.deductionsLoans}}" name="deductionsLoans" type="text" class="input-field input-field-div3"
+                readonly></div>
+          </li>
+          <li>
+            {{!-- is it input or span --}}
+            <span>صندوق مشتريات </span>
+            <div><input value="20" type="text" class="input-field input-field-div3" readonly></div>
+          </li>
+          <li>
+            <span>الراتب بعد الاقتطاعات</span>
+            <div><span></span></div>
+          </li>
+          <li>
+            <span>الراتب بشيكل</span>
+            <div><span></span></div>
+          </li>
+        </ul>
+        <input value="{{id}}" name="id" class="none">
+      </form>
+      <button class="editbtn">تعديل</button>
+      <button class="btn-save none">حفظ</button>
+    </div>
+    <div class="singleBody first-box" id="div4">
+      <form class="form-update" id="form-div4">
+        <ul>
+          <li>
+            <span>اعفاء سكن</span>
+            <div><input value="{{obj.exemptionHouse}}" type="text" name="exemptionHouse" class="input-field input-field-div4"
+                readonly></div>
+          </li>
+          <li>
+            <span>اعفاء مقيم</span>
+            <div><input value="{{obj.exemptionResident}}" type="text" name="exemptionResident" class="input-field input-field-div4"
+                readonly></div>
+          </li>
+          <li>
+            <span>اعفاء جامعي</span>
+            <div><input value="{{obj.uxemptionUniversity}}" type="text" name="uxemptionUniversity" class="input-field input-field-div4"
+                readonly></div>
+          </li>
+        </ul>
+        <input value="{{id}}" name="id" class="none">
+      </form>
+      <button class="editbtn">تعديل</button>
+      <button class="btn-save none">حفظ</button>
+    </div>
+    <div class="singleBody" id="div5">
+      <div class="report-secation">
+        <select class="report-select">
+          <option value="8/2018">
+            8/2018
+          </option>
+          <option value="7/2018">
+            8/2018
+          </option>
+          <option value="6/2018">
+            8/2018
+          </option>
+        </select>
+        <label>
+          <input type="checkbox" value="false"> اظهار العلاوة سنوية
+        </label>
+        <button class="btn-report">عرض التقارير</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
