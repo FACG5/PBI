@@ -1,7 +1,7 @@
-const employees = require('../database/models/employee');
+const { employee } = require('../database/models');
 
 exports.get = (request, response) => {
-  employees
+  employee
     .findAll({
       attributes: [
         'name',

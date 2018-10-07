@@ -1,4 +1,4 @@
-const exemptionsOperations = (exemptions, afterDeductions, variables) => new Promise((resolve) => {
+const exemptionsOperations = (exemptions, afterDeductions, variables) => {
   const { saving, deductions_social_fund: deductionsSocialFund } = afterDeductions;
   const employeeExemptions = exemptions;
   const { dolar } = variables;
@@ -7,6 +7,7 @@ const exemptionsOperations = (exemptions, afterDeductions, variables) => new Pro
       + employeeExemptions.exemptionHouse
       + employeeExemptions.exemptionResident + employeeExemptions.transportationsExemptions
       + employeeExemptions.boxesExemptions;
-  resolve(employeeExemptions);
-});
+  return employeeExemptions;
+};
+
 module.exports = exemptionsOperations;
