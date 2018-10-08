@@ -6,7 +6,7 @@ const addEmployee = require('./addEmployee');
 const carts = require('./cart');
 const convertToSnake = require('../middleware/convertCamelToSnake');
 const editEmployee = require('./editEmployee');
-const error = require('./errors');
+const errors = require('./errors');
 
 const router = express.Router();
 
@@ -19,7 +19,7 @@ router.post('/addEmployee', convertToSnake, addEmployee.post);
 router.put('/employee', convertToSnake, editEmployee.put);
 router.get('/carts', carts.get);
 
-router.use(error.client);
-router.use(error.server);
+router.use(errors.client);
+router.use(errors.server);
 
 module.exports = router;
