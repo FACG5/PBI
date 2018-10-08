@@ -102,3 +102,6 @@
 .box i {
   color: #fff !important;
 }
+.inputfile{
+  box-shadow: none !important;
+}
