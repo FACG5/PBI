@@ -12,6 +12,7 @@ const employeeDetalis = require('./employeeDetails');
 const logout = require('./logout');
 const login = require('./login');
 const error = require('./errors');
+const files = require('./files');
 
 const router = express.Router();
 
@@ -33,6 +34,7 @@ router.get('/setting', setting.get);
 router.post('/setting', setting.post);
 router.delete('/carts', carts.delete);
 router.post('/carts', carts.post);
+router.post('/uploadFiles', files.post);
 
 router.use(error.client);
 router.use(error.server);
