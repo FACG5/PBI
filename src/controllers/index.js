@@ -32,5 +32,6 @@ router.get('/setting', setting.get);
 router.post('/setting', setting.post);
 router.delete('/carts', carts.delete);
 router.post('/carts', carts.post);
+router.put('/carts', carts.put);
 
 module.exports = router;
