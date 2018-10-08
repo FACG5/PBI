@@ -9,7 +9,7 @@ exports.get = (req, res, next) => {
         ['contribution_employee', 'contributionEmployee'], ['saving_ratio', 'savingRatio']],
     },
   ).then((result) => {
-    res.render('generalSettings', { result, cssFile: ['generalSettings'] });
+    res.render('generalSettings', { result, cssFile: ['generalSettings'], jsFile: ['generalSetting'] });
   }).catch(err => next(err));
 };
 
