@@ -2,7 +2,7 @@ const bcryptjs = require('bcryptjs');
 const admin = require('../database/models/admin');
 
 exports.get = (req, res) => {
-  res.render('setting', { cssFile: ['panelSetting', 'swal'], jsFile: ['setting'] });
+  res.render('setting', { cssFile: ['panelSetting', 'swal'], jsFile: ['setting'], activePage: { setting: true } });
 };
 
 exports.post = (req, res, next) => {

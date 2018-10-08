@@ -61,6 +61,15 @@ header>img:nth-child(2) {
 
 .active {
     background-color: #C19827;
+    color: #FFF !important;
+}
+
+.active:hover a {
+    color: #FFF !important;
+}
+
+.active:hover i {
+    color: #FFF !important;
 }
 
 .sideNav a {
