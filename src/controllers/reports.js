@@ -8,5 +8,10 @@ exports.get = (req, res) => {
 exports.post = async (req, res) => {
   const { dateValue } = req.body;
   const reports = await salaryMain(dateValue);
-  reports.map(reportElement => report.upsert(reportElement));
+  reports.map((reportElement) => {
+    report.findAll({ where: { id_number: reportElement.id_number, date: dateValue } }).then((result) => {
+      if (result.length) return report.update(reportElement, { where: { id_number: reportElement.id_number, date: dateValue } });
+      return report.create(reportElement);
+    });
+  });
 };
