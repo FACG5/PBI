@@ -1,7 +1,7 @@
 const trash = document.querySelectorAll('#trash');
 const add = document.getElementById('add');
 const inputField = document.querySelector('#inputText');
-const edit = document.querySelectorAll('#edit');
+const edit = document.querySelectorAll('.edit');
 
 trash.forEach((element) => {
   element.addEventListener('click', (event) => {
