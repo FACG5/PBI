@@ -25,7 +25,7 @@ const addEmployee = (path) => {
   if (path) {
     const cerficationName = newEmpData.certificationName;
     const cerfication = { cerficationName, path };
-   newEmpData.certifications = cerfication;
+    newEmpData.certifications = cerfication;
   }
   if (newEmpData.name.trim() && newEmpData.idNumber.trim()) {
     fetch('/addEmployee', {
