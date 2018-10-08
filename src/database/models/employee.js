@@ -15,6 +15,10 @@ const employee = sequelize.define('employee', {
     type: Sequelize.STRING,
     defaultValue: '',
   },
+  social_status: {
+    type: Sequelize.STRING,
+    defaultValue: '',
+  },
   location: {
     type: Sequelize.STRING,
     defaultValue: '',
@@ -38,6 +42,10 @@ const employee = sequelize.define('employee', {
   class: {
     type: Sequelize.INTEGER,
     defaultValue: 1,
+  },
+  social_status: {
+    type: Sequelize.STRING,
+    defaultValue: '',
   },
   category: {
     type: Sequelize.STRING,
@@ -91,19 +99,19 @@ const employee = sequelize.define('employee', {
     type: Sequelize.DOUBLE,
     defaultValue: 0.0,
   },
-  Deductions_health_insurance: {
+  deductions_health_insurance: {
     type: Sequelize.DOUBLE,
     defaultValue: 0.0,
   },
-  Deductions_loans: {
+  deductions_loans: {
     type: Sequelize.DOUBLE,
     defaultValue: 0.0,
   },
-  Deductions_social_fund: {
+  deductions_social_fund: {
     type: Sequelize.DOUBLE,
     defaultValue: 0.0,
   },
-  uxemption_university: {
+  exemption_university: {
     type: Sequelize.DOUBLE,
     defaultValue: 0.0,
   },

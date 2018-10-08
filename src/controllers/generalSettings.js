@@ -13,9 +13,17 @@ exports.get = (req, res, next) => {
   }).catch(err => next(err));
 };
 
-exports.post = (req, res) => {
+exports.post = (req, res, next) => {
   const input = req.body;
-  fixedVariables.update(input, { where: { id: 1 } }).then(() => {
-    res.redirect('/generalSetting');
+  fixedVariables.findAll({ where: { id: 1 } }).then((result) => {
+    if (!result.length) {
+      fixedVariables.create(input).then(() => {
+        res.send(JSON.stringify({ err: null, message: 'تم إنشاء البيانات بنجاح' }));
+      }).catch(err => next(err));
+    } else {
+      fixedVariables.update(input, { where: { id: 1 } }).then(() => {
+        res.send(JSON.stringify({ err: null, message: 'تم تحديث البيانات بنجاح' }));
+      }).catch(err => next(err));
+    }
   });
 };

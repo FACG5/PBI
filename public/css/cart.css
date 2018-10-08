@@ -88,3 +88,18 @@ table tr:last-child td:first-child {
 table tr:last-child td:last-child {
     border-bottom-left-radius: 6px;
 }
+
+.box .inputs {
+    display: flex;
+    justify-content: space-around;
+}
+
+.box .inputs input {
+    border: none;
+    border-radius: 5px;
+    box-shadow: -1px 1px 3px 0px #201a3a;
+    width: 330px;
+    padding: 7px 10px;
+    background: none;
+    margin-top: 12px;
+}
