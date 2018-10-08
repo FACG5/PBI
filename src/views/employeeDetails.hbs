@@ -166,11 +166,11 @@
           </li>
           <li>
             <span>نقاط الموظف</span>
-            <div><input value="{{obj.points}}" type="text" name="point" class="input-field input-field-div2" readonly></div>
+            <div><input value="{{obj.points}}" type="text" name="points" class="input-field input-field-div2" readonly></div>
           </li>
           <li>
             <span>نسبة العلاوة سنوية</span>
-            <div><input value="{{obj.allowanceWork}}$" type="text" name="allowanceWork" class="input-field input-field-div2"
+            <div><input value="{{obj.annualRate}}" type="text" name="annualRate" class="input-field input-field-div2"
                 readonly></div>
           </li>
           <li>
@@ -234,7 +234,7 @@
           </li>
           <li>
             <span>اعفاء جامعي</span>
-            <div><input value="{{obj.uxemptionUniversity}}" type="text" name="uxemptionUniversity" class="input-field input-field-div4"
+            <div><input value="{{obj.exemptionUniversity}}" type="text" name="exemptionUniversity" class="input-field input-field-div4"
                 readonly></div>
           </li>
         </ul>
@@ -257,7 +257,7 @@
           </option>
         </select>
         <label>
-          <input type="checkbox" value="false"> اظهار العلاوة سنوية
+          <input type="checkbox"  value="false"> اظهار العلاوة سنوية
         </label>
         <button class="btn-report">عرض التقارير</button>
       </div>

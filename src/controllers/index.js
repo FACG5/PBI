@@ -7,11 +7,11 @@ const carts = require('./cart');
 const setting = require('./setting');
 const convertToSnake = require('../middleware/convertCamelToSnake');
 const editEmployee = require('./editEmployee');
+const errors = require('./errors');
 const reports = require('./reports');
 const employeeDetalis = require('./employeeDetails');
 const logout = require('./logout');
 const login = require('./login');
-const error = require('./errors');
 const files = require('./files');
 
 const router = express.Router();
@@ -27,6 +27,7 @@ router.get('/logout', logout.get);
 router.get('/login', login.get);
 router.post('/login', login.post);
 router.get('/carts', carts.get);
+
 router.get('/reports', reports.get);
 router.post('/reports', reports.post);
 router.get('/employee/:id', employeeDetalis.get);
@@ -35,8 +36,9 @@ router.post('/setting', setting.post);
 router.delete('/carts', carts.delete);
 router.post('/carts', carts.post);
 router.post('/uploadFiles', files.post);
+router.put('/carts', carts.put);
 
-router.use(error.client);
-router.use(error.server);
+router.use(errors.client);
+router.use(errors.server);
 
 module.exports = router;
