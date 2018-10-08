@@ -11,11 +11,11 @@
             <th>حدث</th>
         </tr>
         {{#each result}}
-        <tr id="row">
+        <tr id="row" boxId="{{dataValues.id}}">
             <td><input type="text" value="{{dataValues.name}}" id="cartName" readonly></td>
             <td>
-                <i class="far fa-edit" id="edit"></i>
-                <i class="fas fa-trash-alt" id="trash" boxId="{{dataValues.id}}"></i>
+                <i class="fas fa-trash-alt" id="trash"></i>
+                <i class="far fa-edit edit" id="edit"></i>
             </td>
         </tr>
     {{/each}}
