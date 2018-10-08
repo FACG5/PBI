@@ -16,7 +16,7 @@
     margin: 0 5px;
 }
 
-.box td i:first-child {
+.box td i:last-child {
     color: blue;
 }
 
@@ -117,5 +117,17 @@ table tr:last-child td:last-child {
 }
 
 .inputEditable {
-    
+    max-width: 104px;
+    font-size: 15px !important;
+    color: #000000;
+    background: #ffffff !important;
+    border: 1px solid #000 !important;
+}
+
+.check {
+    color: green !important;
+}
+
+.edit {
+    color: blue !important;
 }
