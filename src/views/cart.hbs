@@ -8,12 +8,15 @@
     <table>
         <tr>
             <th>اسم صندوق المشتريات</th>
-            <th>حذف</th>
+            <th>حدث</th>
         </tr>
         {{#each result}}
-        <tr>
-            <td>{{dataValues.name}}</td>
-            <td><i class="fas fa-trash-alt" id="trash" boxId="{{dataValues.id}}"></i></td>
+        <tr id="row" boxId="{{dataValues.id}}">
+            <td><input type="text" value="{{dataValues.name}}" id="cartName" readonly></td>
+            <td>
+                <i class="fas fa-trash-alt" id="trash"></i>
+                <i class="far fa-edit edit"></i>
+            </td>
         </tr>
     {{/each}}
     </table>

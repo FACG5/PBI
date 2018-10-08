@@ -31,3 +31,22 @@ exports.post = (req, res) => {
     res.status(401).send(JSON.stringify({ err: 'الرجاء إدخال بيانات' }));
   }
 };
+
+exports.put = (req, res) => {
+  const newCartNameData = req.body;
+  if (newCartNameData.name.trim()) {
+    purchaseBox.findAll({ where: { name: newCartNameData.name } })
+      .then((result) => {
+        if (result.length === 0) {
+          purchaseBox.update(newCartNameData, { where: { id: newCartNameData.boxId } })
+            .then(() => {
+              res.status(200).send({ err: null, message: 'تم تحديث البيانات' });
+            });
+        } else {
+          res.status(401).send({ err: 'الاسم موجود مسبقا' });
+        }
+      });
+  } else {
+    res.status(401).send(JSON.stringify({ err: 'الرجاء إدخال بيانات' }));
+  }
+};

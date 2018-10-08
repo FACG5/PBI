@@ -34,6 +34,7 @@ router.get('/setting', setting.get);
 router.post('/setting', setting.post);
 router.delete('/carts', carts.delete);
 router.post('/carts', carts.post);
+router.put('/carts', carts.put);
 
 router.use(errors.client);
 router.use(errors.server);

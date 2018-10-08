@@ -13,6 +13,11 @@
 .box td i {
     color: red;
     cursor: pointer;
+    margin: 0 5px;
+}
+
+.box td i:last-child {
+    color: blue;
 }
 
 .box tr:nth-child(even) {
@@ -102,4 +107,27 @@ table tr:last-child td:last-child {
     padding: 7px 10px;
     background: none;
     margin-top: 12px;
+}
+
+.box table td input {
+    border: none;
+    background: none;
+    text-align: center;
+    font-size: 16px;
+}
+
+.inputEditable {
+    max-width: 104px;
+    font-size: 15px !important;
+    color: #000000;
+    background: #ffffff !important;
+    border: 1px solid #000 !important;
+}
+
+.check {
+    color: green !important;
+}
+
+.edit {
+    color: blue !important;
 }
