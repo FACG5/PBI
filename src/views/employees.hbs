@@ -12,15 +12,17 @@
                 <th>رقم الهوية</th>
                 <th>المسمى الوظيفي</th>
                 <th>الفئة</th>
+                <th>حدث</th>
             </tr>
         </thead>
         <tbody>
             {{#each result}}
                 <tr>
-                    <td><a href="employee/{{dataValues.id}}">{{dataValues.name}}</a></td>
+                    <td>{{dataValues.name}}</td>
                     <td>{{dataValues.idNumber}}</td>
                     <td>{{dataValues.jobTitle}}</td>
                     <td>{{dataValues.class}}</td>
+                    <td><a href="employee/{{dataValues.id}}">تفاصيل</a></td>
                 </tr>
         {{/each}}
         </tbody>
