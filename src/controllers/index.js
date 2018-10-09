@@ -14,11 +14,10 @@ const employeeDetalis = require('./employeeDetails');
 const logout = require('./logout');
 const login = require('./login');
 const autheticate = require('../middleware/authentication');
-const loginAuthenticate = require('../middleware/loginAuthenticate');
 
 const router = express.Router();
 
-router.get('/login', loginAuthenticate, login.get);
+router.get('/login', login.get);
 router.post('/login', login.post);
 router.use(autheticate);
 router.get('/', overview.get);
