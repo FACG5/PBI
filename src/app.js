@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const favicon = require('serve-favicon');
 const handlebars = require('express-handlebars');
 const controller = require('./controllers');
 
@@ -20,6 +21,7 @@ app.engine(
     defaultLayout: 'main',
   }),
 );
+app.use(favicon(path.join(__dirname, '..', 'public', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(controller);
 
