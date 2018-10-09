@@ -33,7 +33,7 @@ router.get('/setting', setting.get);
 router.post('/setting', setting.post);
 router.delete('/carts', carts.delete);
 router.post('/carts', carts.post);
-
+router.get('/downloadReports/:date', reports.downloadExcel);
 router.use(error.client);
 router.use(error.server);
 
