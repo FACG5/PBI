@@ -12,6 +12,7 @@
                 <th>رقم الهوية</th>
                 <th>المسمى الوظيفي</th>
                 <th>الفئة</th>
+                <th>حدث</th>
             </tr>
         </thead>
         <tbody>
@@ -21,6 +22,7 @@
                     <td>{{dataValues.idNumber}}</td>
                     <td>{{dataValues.jobTitle}}</td>
                     <td>{{dataValues.class}}</td>
+                    <td><a href="employee/{{dataValues.id}}">تفاصيل</a></td>
                 </tr>
         {{/each}}
         </tbody>

@@ -4,6 +4,7 @@ exports.get = (request, response) => {
   employee
     .findAll({
       attributes: [
+        'id',
         'name',
         ['id_number', 'idNumber'],
         ['job_title', 'jobTitle'],

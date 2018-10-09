@@ -13,7 +13,9 @@ exports.get = (req, res, next) => {
       ],
     })
     .then((result) => {
-      res.render('generalSettings', { result, cssFile: ['generalSettings'], title: 'إعدادات عامة' });
+      res.render('generalSettings', {
+        result, cssFile: ['generalSettings'], jsFile: ['generalSetting'], title: 'إعدادات عامة',
+      });
     })
     .catch(err => next(err));
 };
