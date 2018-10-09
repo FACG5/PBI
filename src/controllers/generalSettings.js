@@ -1,23 +1,18 @@
 const fixedVariables = require('../database/models/fixedVarible');
 
 exports.get = (req, res, next) => {
-  fixedVariables
-    .findAll({
-      attributes: [
-        'dolar',
-        ['exemption_resident', 'exemptionResident'],
-        ['tax_value', 'taxValue'],
-        ['contribution_institute', 'contributionInstitute'],
-        ['contribution_employee', 'contributionEmployee'],
-        ['saving_ratio', 'savingRatio'],
-      ],
-    })
-    .then((result) => {
-      res.render('generalSettings', {
-        result, cssFile: ['generalSettings'], jsFile: ['generalSetting'], title: 'إعدادات عامة',
-      });
-    })
-    .catch(err => next(err));
+  fixedVariables.findAll(
+    {
+      attributes:
+      ['dolar', ['exemption_resident', 'exemptionResident'],
+        ['tax_value', 'taxValue'], ['contribution_institute', 'contributionInstitute'],
+        ['contribution_employee', 'contributionEmployee'], ['saving_ratio', 'savingRatio']],
+    },
+  ).then((result) => {
+    res.render('generalSettings', {
+      result, cssFile: ['generalSettings'], jsFile: ['generalSetting'], activePage: { generalSetting: true }, title: 'إعدادات عامة',
+    });
+  }).catch(err => next(err));
 };
 
 exports.post = (req, res, next) => {

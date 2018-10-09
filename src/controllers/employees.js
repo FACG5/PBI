@@ -13,10 +13,7 @@ exports.get = (request, response) => {
     })
     .then((result) => {
       response.render('employees', {
-        result,
-        cssFile: ['tables'],
-        title: 'قائمة الموظفين',
-        jsFile: ['employees'],
+        result, cssFile: ['tables'], jsFile: ['employees'], activePage: { employee: true }, title: 'قائمة الموظفين',
       });
     });
 };

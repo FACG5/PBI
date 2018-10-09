@@ -3,9 +3,7 @@ const admin = require('../database/models/admin');
 
 exports.get = (req, res) => {
   res.render('setting', {
-    cssFile: ['panelSetting', 'swal'],
-    jsFile: ['setting'],
-    title: 'إعدادات لوحة التحكم',
+    cssFile: ['panelSetting', 'swal'], jsFile: ['setting'], activePage: { setting: true }, title: 'إعدادات لوحة التحكم',
   });
 };
 
@@ -29,7 +27,7 @@ exports.post = (req, res, next) => {
                 err: null,
                 message: 'تم تحديث البيانات بنجاح',
               }),
-            ) )
+            ))
             .catch(error => next(error));
         });
       },

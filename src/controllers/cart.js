@@ -3,10 +3,7 @@ const purchaseBox = require('../database/models/purchaseBox');
 exports.get = (req, res) => {
   purchaseBox.findAll().then((result) => {
     res.render('cart', {
-      result,
-      cssFile: ['cart', 'swal'],
-      jsFile: ['cart'],
-      title: ' صناديق المشتريات ',
+      result, cssFile: ['cart', 'swal'], jsFile: ['cart'], activePage: { carts: true }, title: ' صناديق المشتريات ',
     });
   });
 };
