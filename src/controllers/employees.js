@@ -15,6 +15,7 @@ exports.get = (request, response) => {
         result,
         cssFile: ['tables'],
         title: 'قائمة الموظفين',
+        jsFile: ['employees'],
       });
     });
 };

@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const path = require('path');
 const favicon = require('serve-favicon');
 const handlebars = require('express-handlebars');
@@ -7,6 +8,7 @@ const controller = require('./controllers');
 
 
 const app = express();
+app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.set('port', process.env.PORT || 3000);
