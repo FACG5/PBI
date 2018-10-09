@@ -1,18 +1,21 @@
 const styles = require('./styles');
 
-const heading = [
-  [],
-  [],
-  [
-    '',
-    '',
-    {
-      value: 'رواتب موظفي المعهد عن شهر أيلول 2018',
-      style: styles.headerDark,
-    },
-  ],
-  [],
-  [],
-];
+const head = (date) => {
+  const heading = [
+    [],
+    [],
+    [
+      '',
+      '',
+      {
+        value: `رواتب موظفي المعهد عن شهر ${date}`,
+        style: styles.headerDark,
+      },
+    ],
+    [],
+    [],
+  ];
+  return heading;
+};
 
-module.exports = heading;
+module.exports = head;
