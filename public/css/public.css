@@ -123,3 +123,7 @@ hr {
     overflow-y: scroll;
     min-height: 400px;
 }
+
+.logout:hover a, .logout:hover i {
+    color: red !important;
+}
