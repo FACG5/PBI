@@ -13,6 +13,7 @@ const reports = require('./reports');
 const employeeDetalis = require('./employeeDetails');
 const logout = require('./logout');
 const login = require('./login');
+const error = require('./errors');
 const autheticate = require('../middleware/authentication');
 
 const router = express.Router();
@@ -41,5 +42,8 @@ router.put('/carts', carts.put);
 
 router.use(errors.client);
 router.use(errors.server);
+
+router.use(error.client);
+router.use(error.server);
 
 module.exports = router;

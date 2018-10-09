@@ -6,6 +6,7 @@ exports.get = (req, res) => {
   res.render('login', {
     layout: 'login',
     cssFile: ['public', 'login', 'swal'],
+    title: 'تسجيل الدخول',
   });
 };
 
