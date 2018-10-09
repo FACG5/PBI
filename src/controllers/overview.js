@@ -9,6 +9,8 @@ exports.get = (req, res) => {
         ['contribution_employee', 'contributionEmployee'], ['saving_ratio', 'savingRatio']],
     },
   ).then((result) => {
-    res.render('overview', { result, cssFile: ['overView'], activePage: { home: true } });
+    res.render('overview', {
+      result, cssFile: ['overView'], activePage: { home: true }, title: 'المعهد المصرفي الفلسطيني | نظرة عامة',
+    });
   });
 };

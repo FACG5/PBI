@@ -13,12 +13,12 @@ const reports = require('./reports');
 const employeeDetalis = require('./employeeDetails');
 const logout = require('./logout');
 const login = require('./login');
+const error = require('./errors');
 const autheticate = require('../middleware/authentication');
-const loginAuthenticate = require('../middleware/loginAuthenticate');
 
 const router = express.Router();
 
-router.get('/login', loginAuthenticate, login.get);
+router.get('/login', login.get);
 router.post('/login', login.post);
 router.use(autheticate);
 router.get('/', overview.get);
@@ -42,5 +42,8 @@ router.put('/carts', carts.put);
 
 router.use(errors.client);
 router.use(errors.server);
+
+router.use(error.client);
+router.use(error.server);
 
 module.exports = router;

@@ -4,6 +4,7 @@ exports.get = (request, response) => {
   employee
     .findAll({
       attributes: [
+        'id',
         'name',
         ['id_number', 'idNumber'],
         ['job_title', 'jobTitle'],
@@ -12,7 +13,7 @@ exports.get = (request, response) => {
     })
     .then((result) => {
       response.render('employees', {
-        result, cssFile: ['tables'], jsFile: ['employees'], activePage: { employee: true },
+        result, cssFile: ['tables'], jsFile: ['employees'], activePage: { employee: true }, title: 'قائمة الموظفين',
       });
     });
 };
