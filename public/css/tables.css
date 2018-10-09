@@ -93,12 +93,13 @@ table tr:last-child td:last-child {
 
 table tbody tr td a {
   text-decoration: none;
-    color: #FFF;
-    background: #695ba5;
-    border: 1px solid #695ba5;
-    border-radius: 14px;
-    padding: 2px 8px;
-    transition-duration: 0.3s
+  color: #FFF;
+  background: #695ba5;
+  border: 1px solid #695ba5;
+  border-radius: 14px;
+  padding: 1px 10px;
+  font-size: 12px;
+  transition-duration: 0.3s
 }
 
 table tbody tr td a:hover {
