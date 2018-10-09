@@ -1,3 +1,4 @@
+const fileUpload = require('express-fileupload');
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -8,6 +9,7 @@ const controller = require('./controllers');
 
 
 const app = express();
+app.use(fileUpload());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

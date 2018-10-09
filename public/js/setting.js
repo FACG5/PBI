@@ -1,4 +1,4 @@
-const addEmployeeButton = document.getElementById('addEmp');
+const saveSetting = document.getElementById('saveSetting');
 saveSetting.addEventListener('click', (e) => {
   const newEmpForm = document.getElementById('settingForm');
   const formData = new FormData(newEmpForm);

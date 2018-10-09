@@ -77,45 +77,31 @@
 .btn-special:hover {
   background: rgb(173, 63, 63) !important;
 }
-.inputfile {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
+.fileContainer {
+    overflow: hidden;
+    position: relative;
 }
-.inputfile1 {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  z-index: -1;
-}
-.inputfile + label,
-.inputfile1 + label {
-  font-size: 14.8px;
-  font-weight: 100;
-  color: white;
-  background-color: #201a3a;
-  display: inline-block;
-  box-shadow: -1px 1px 3px 0px #201a3a;
-  border-radius: 5px;
-  transition-duration: 0.3s;
-  padding: 5px 10px;
-}
-.inputfile:focus + label,
-.inputfile + label:hover,
-.inputfile1:focus + label,
-.inputfile2 + label:hover {
-  background-color: #3f3663;
-}
-.inputfile + label,
-.inputfile1 + label {
-  cursor: pointer;
-  height: 35px;
-  text-align: center;
+
+.fileContainer [type=file] {
+
+    font-size: 999px;
+    filter: alpha(opacity=0);
+    min-height: 100%;
+    min-width: 100%;
+    /* opacity: 0; */
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 0;
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background: #201a3a;
 }
 .box i {
   color: #fff !important;
+}
+.inputfile{
+  box-shadow: none !important;
 }
