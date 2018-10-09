@@ -18,9 +18,11 @@ saveSettingButton.addEventListener('click', (e) => {
     .then(result => result.json())
     .then((result) => {
       if (result.err) {
-        return swal('', result.err, 'error');
+        return swal('', result.err, 'error').then(() => {
+          window.location.href = '/generalSetting';
+        });
       }
-      return swal('', result.message, 'success').then((value) => {
+      return swal('', result.message, 'success').then(() => {
         window.location.href = '/generalSetting';
       });
     });
