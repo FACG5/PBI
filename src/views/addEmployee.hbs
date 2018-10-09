@@ -37,18 +37,18 @@
             </li>
             <li>
                 <span>الوظيفة</span>
-                <input name = 'jobTitle' type="text">
+                <input name='jobTitle' type="text">
             </li>
             <li>
                 <span>الفئة</span>
-                <select name = 'category'>
+                <select name='category'>
                     <option value="A">A</option>
                     <option value="B">B</option>
                     <option value="C">C</option>
                 </select>
             </li>
             <li>
-                <span name = 'class' >الدرجة</span>
+                <span name='class'>الدرجة</span>
                 <select>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -57,28 +57,29 @@
             </li>
             <li>
                 <span>عمل الزوجة</span>
-                <select name = 'wife'>
+                <select name='wife'>
                     <option value="0">تعمل</option>
                     <option value="1">ﻻ تعمل</option>
                 </select>
             </li>
             <li class="full">
-                <span>الشهادات العلمية</span>
-                <input type="text" placeholder="عنوان الشهادة" class="inputfull">
-                <input type="file" name="file" id="file" class="inputfile" />
-                <label for="file" class="labelfile"><i class="fas fa-cloud-upload-alt"></i> Upload file</label>
+                <form id='cerfi'>
+                    <span>الشهادات العلمية</span>
+                    <input type="text" placeholder="عنوان الشهادة" name='certificationName' >
+                    <input type="file" id='cerfications' name='certifications'  class="inputfile"/>
+                </form>
             </li>
             <li>
                 <span>تاريخ التعيين</span>
-                <input name = 'jobStart' type="date">
+                <input name='jobStart' type="date">
             </li>
             <li>
                 <span>الراتب</span>
-                <input name = 'salary' type="number">
+                <input name='salary' type="number">
             </li>
             <li>
                 <span>نوع الوظيفة</span>
-                <select name = 'jobType'>
+                <select name='jobType'>
                     <option value="0">مصنف</option>
                     <option value="1">غير مصنف</option>
                     <option value="2">مؤقت</option>
@@ -87,17 +88,10 @@
             </li>
             <li>
                 <span>المسئول المباشر</span>
-                <input name = 'supervisor' type="text">
+                <input name='supervisor' type="text">
             </li>
-            <li class="full">
-                <span>الوصف الوظيفي للموظف</span>
-                <input type="file" id="file" class="inputfile1" />
-                <label for="file" class="labelfile"><i class="fas fa-cloud-upload-alt"></i> Upload file</label>
-            </li>
-
         </ul>
     </form>
-        <button id='addEmp'>إضافة موظف</button>
-        <button class="btn-special">رجوع</button>
+    <button id='addEmp'>إضافة موظف</button>
+    <a href="/employees"><button class="btn-special">رجوع</button></a>
 </div>
-
