@@ -20,6 +20,7 @@ exports.get = async (req, res, next) => {
         id: req.params.id,
         cssFile: ['employeeDetails'],
         jsFile: ['employeeDetails'],
+        activePage: { employee: true },
       });
     }
   } catch (err) {
