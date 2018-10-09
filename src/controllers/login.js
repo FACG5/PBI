@@ -6,6 +6,7 @@ exports.get = (req, res) => {
   res.render('login', {
     layout: 'login',
     cssFile: ['public', 'login', 'swal'],
+    title: 'تسجيل الدخول',
   });
 };
 
@@ -24,7 +25,7 @@ exports.post = (req, res) => {
             if (errSign) {
               res.status(401).send(JSON.stringify({ err: 'حاول مرة أخرى' }));
             } else {
-              res.cookie('jwt', resultCookie, { maxAge: 900000 });
+              res.cookie('jwt', resultCookie, { maxAge: 1800000 });
               res.status(200).send(JSON.stringify({ err: null, message: 'تم تسجيل الدخول بنجاح , سيتم تحويلك إلى الصفحة الرئيسية' }));
             }
           });

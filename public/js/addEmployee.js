@@ -1,13 +1,32 @@
 const addEmployeeButton = document.getElementById('addEmp');
+const cerfications = document.getElementById('cerfications');
+const newEmpForm = document.getElementById('newEmpForm');
 
-addEmployeeButton.addEventListener('click', (e) => {
-  const newEmpForm = document.getElementById('newEmpForm');
+const uploadFiles = async () => {
+  const formData = new FormData();
+  formData.append('cerfications', cerfications.files[0]);
+  const requestOptions = {
+    method: 'POST',
+    body: formData,
+  };
 
-  const formData = new FormData(newEmpForm);
+  let result = await fetch('/uploadFiles', requestOptions);
+  result = await result.json();
+  const { path } = result;
+  return path;
+};
+const addEmployee = (path) => {
+  const employeeData = new FormData(newEmpForm);
   const newEmpData = {};
-  formData.forEach((value, key) => {
+  employeeData.forEach((value, key) => {
     newEmpData[key] = value;
   });
+
+  if (path) {
+    const cerficationName = newEmpData.certificationName;
+    const cerfication = { cerficationName, path };
+    newEmpData.certifications = cerfication;
+  }
   if (newEmpData.name.trim() && newEmpData.idNumber.trim()) {
     fetch('/addEmployee', {
       method: 'POST',
@@ -15,8 +34,7 @@ addEmployeeButton.addEventListener('click', (e) => {
       headers: {
         'Content-Type': 'application/json',
       },
-    })
-      .then(result => result.json())
+    }).then(result => result.json())
       .then((result) => {
         if (result.err) {
           return swal('', result.err, 'error');
@@ -27,5 +45,14 @@ addEmployeeButton.addEventListener('click', (e) => {
       });
   } else {
     swal('Failed', 'الرجاء إدخال إسم الموظف  ورقم الهوية ! ', 'error');
+  }
+};
+
+addEmployeeButton.addEventListener('click', async () => {
+  if (cerfications.files[0]) {
+    const path = await uploadFiles();
+    addEmployee(path);
+  } else {
+    addEmployee();
   }
 });
