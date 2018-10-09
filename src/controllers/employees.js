@@ -11,6 +11,10 @@ exports.get = (request, response) => {
       ],
     })
     .then((result) => {
-      response.render('employees', { result, cssFile: ['tables'] });
+      response.render('employees', {
+        result,
+        cssFile: ['tables'],
+        title: 'قائمة الموظفين',
+      });
     });
 };
