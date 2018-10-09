@@ -29,40 +29,45 @@ const contributionsOperations = (bonus, contributionEmployee, contributionInstit
     + allowanceJerusalem
     + salary)
   * contributionEmployee;
-
-  const contributions = { contributionOfInstitute, contributionOfEmployee };
+  const totlaContribtuions = contributionOfInstitute + contributionOfEmployee;
+  const contributions = { contributionOfInstitute, contributionOfEmployee, totlaContribtuions };
   return contributions;
 };
 
 const deductionOperations = (bonus, deductions, finalExemptions, variables) => {
-  const { salary, totalAllownace } = bonus;
+  const { salary, totalAllownace, salaryAfterBonus } = bonus;
   const { contributionEmployee, contributionInstitute, dolar } = variables;
   let employeeDeductions = deductions;
 
-  employeeDeductions.salaryTaxes = (salary + totalAllownace) * dolar - finalExemptions.totalExemptions;
-  employeeDeductions = taxes(employeeDeductions);
+  employeeDeductions.salaryTaxes = (salary + totalAllownace) * dolar - finalExemptions.totalExemptions;  
+  employeeDeductions = taxes(employeeDeductions, variables);
   employeeDeductions = convertToCamelCase(employeeDeductions);
 
   employeeDeductions.totalTaxes = employeeDeductions.sectionTaxesTotal / dolar;
   const {
     totalTaxes,
     deductionsSocialFund,
-    saving,
+    savings,
     deductionsHealthInsurance,
     deductionsLoans,
     purchaseBoxes,
   } = employeeDeductions;
 
-  const { contributionOfInstitute, contributionOfEmployee } = contributionsOperations(bonus, contributionEmployee, contributionInstitute);
+  const { contributionOfInstitute, contributionOfEmployee, totlaContribtuions } = contributionsOperations(bonus, contributionEmployee, contributionInstitute);
   employeeDeductions.contributionOfEmployee = contributionOfEmployee;
   employeeDeductions.contributionOfInstitute = contributionOfInstitute;
-  employeeDeductions.totalDeductions = totalTaxes
-      + deductionsHealthInsurance
-      + saving
-      + contributionOfEmployee
-      + deductionsSocialFund
-      + deductionsLoans
-      + purchaseBoxes;
+  employeeDeductions.totlaContribtuions = totlaContribtuions;
+  const totalDeductions = totalTaxes
+  + deductionsHealthInsurance
+  + savings
+  + contributionOfEmployee
+  + deductionsSocialFund
+  + deductionsLoans
+  + purchaseBoxes;
+  employeeDeductions.totalDeductions = totalDeductions;
+  const salaryAfterDeduction = salaryAfterBonus - totalDeductions;
+  employeeDeductions.salaryAfterDeduction = salaryAfterDeduction;
+  employeeDeductions.salaryAfterDeductionNis = salaryAfterDeduction * dolar;
 
   return employeeDeductions;
 };
