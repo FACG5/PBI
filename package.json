@@ -29,11 +29,12 @@
     "eslint": "^5.6.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.18.4",
+    "env2": "^2.2.2"
   },
   "scripts": {
     "start": "node src/index.js",
-    "dev": "nodemon -x 'npm start'"
+    "dev": "NODE_ENV=development nodemon -x 'npm start'"
   },
   "repository": {
     "type": "git",
