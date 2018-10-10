@@ -4,7 +4,7 @@ const specification = {
   name: {
     displayName: 'اسم الموظف',
     headerStyle: styles.column,
-    width: 73,
+    width: 120,
   },
   salary: {
     displayName: 'راتب الموظف الأساسي',
@@ -172,7 +172,7 @@ const specification = {
   totlaContribtuions: {
     displayName: 'مجموع المسهمات',
     headerStyle: styles.column,
-    width: 72,
+    width: 77,
   },
 };
 
