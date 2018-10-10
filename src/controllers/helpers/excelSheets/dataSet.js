@@ -1,17 +1,12 @@
 const reportsTable = require('../../../database/models/report');
 
-const getReports = date => new Promise((resolve, reject) => {
+const getReports = async (date) => {
   const dataset = [{}];
-  reportsTable
-    .findAll({ where: { date } })
-    .then((reports) => {
-      reports.map((report) => {
-        dataset.push(report.dataValues);
-      });
-    })
-    .then(() => {
-      resolve(dataset);
-    });
-});
+  const reports = await reportsTable.findAll({ where: { date } });
+  reports.map((report) => {
+    dataset.push(report.dataValues);
+  });
+  return dataset;
+};
 
 module.exports = getReports;
