@@ -29,9 +29,7 @@ const salaryMain = async (date) => {
   const employeesAfterBonus = await bonusQuery();
   const report = employeesAfterBonus.map(employe => salaryCalculations(employe, date, variables));
   const reports = await Promise.all(report);
-  
   return reports;
 };
-
 
 module.exports = salaryMain;
