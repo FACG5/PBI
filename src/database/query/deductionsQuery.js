@@ -1,14 +1,11 @@
 const sequelize = require('../config/connection');
 
-const deductionsQuery = async (employee, variables) => {
-  const { savingRatio } = variables;
+const deductionsQuery = async (employee) => {
   const { employeeId } = employee;
   const result = await sequelize.query(
-    `select deductions_health_insurance,deductions_loans,deductions_social_fund,(salary*${savingRatio}) AS saving ,(select coalesce (SUM(payment),0) AS purchase_boxes from purchases_employees where employee_id = ${employeeId})`
-      + `from employees where id = ${employeeId}`,
+    'select deductions_health_insurance,deductions_loans,deductions_social_fund,(salary*(select saving_ratio from fixed_varibles where id = 1)) AS savings ,(select coalesce (SUM(payment),0) AS purchase_boxes from purchases_employees where employee_id = :employeeId )from employees where id = :employeeId', { replacements: { employeeId } },
   );
-  const employeeDeductions = result[0][0];
-  return employeeDeductions;
+  return result[0][0];
 };
 
 module.exports = deductionsQuery;

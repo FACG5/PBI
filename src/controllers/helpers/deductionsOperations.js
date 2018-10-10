@@ -39,7 +39,7 @@ const deductionOperations = (bonus, deductions, finalExemptions, variables) => {
   const { contributionEmployee, contributionInstitute, dolar } = variables;
   let employeeDeductions = deductions;
 
-  employeeDeductions.salaryTaxes = (salary + totalAllownace) * dolar - finalExemptions.totalExemptions;  
+  employeeDeductions.salaryTaxes = (salary + totalAllownace) * dolar - finalExemptions.totalExemptions;
   employeeDeductions = taxes(employeeDeductions, variables);
   employeeDeductions = convertToCamelCase(employeeDeductions);
 

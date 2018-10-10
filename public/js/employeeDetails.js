@@ -1,12 +1,16 @@
+/* global swal show */
+/* eslint no-param-reassign: 0 */
+/* exported show */
+
 const links = document.querySelectorAll('.tablink');
 const singleBody = document.querySelectorAll('.singleBody');
 const btnSave = document.querySelectorAll('.btn-save');
 
 const sendData = (form) => {
-  const formData = new FormData(form);
   const holdData = {};
-  formData.forEach((value, key) => {
-    holdData[key] = value;
+  const arr = Array.from(form.elements);
+  arr.forEach((element) => {
+    holdData[element.name] = element.value;
   });
   fetch('/employee', {
     method: 'PUT',
@@ -14,13 +18,16 @@ const sendData = (form) => {
     headers: {
       'Content-Type': 'application/json',
     },
-  }).then((result) => result.json())
+  }).then(result => result.json())
     .then((result) => {
       if (result.err) {
         return swal('', result.err, 'error');
       }
-      return swal('', result.message, 'success');
-    }).catch(err => swal('', err, 'error'));
+      return swal('', result.message, 'success').then(() => {
+        window.location.href = `/employee/${holdData.id}`;
+      });
+    })
+    .catch(err => swal('', err, 'error'));
 };
 
 const show = (event, divName) => {
@@ -39,7 +46,7 @@ editBtn.forEach((item) => {
   item.addEventListener('click', (event) => {
     const divParent = event.target.parentElement;
     const elements = divParent.querySelectorAll('.input-field');
-    const btnSave = divParent.querySelector('.btn-save');
+    const btnForSave = divParent.querySelector('.btn-save');
     const select = divParent.querySelectorAll('.status');
     elements.forEach((element) => {
       element.readOnly = false;
@@ -52,7 +59,7 @@ editBtn.forEach((item) => {
       const span = element.parentElement.getElementsByTagName('span');
       span[0].classList.add('none');
     });
-    btnSave.classList.remove('none');
+    btnForSave.classList.remove('none');
     event.target.classList.add('none');
   });
 });
@@ -63,6 +70,7 @@ btnSave.forEach((item) => {
     const elements = divParent.querySelectorAll('.input-field-editable');
     const btnEdit = divParent.querySelector('.editbtn');
     const form = divParent.querySelector('.form-update');
+
     const select = divParent.querySelectorAll('.status');
     elements.forEach((element) => {
       element.readOnly = true;

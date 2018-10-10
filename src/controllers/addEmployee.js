@@ -25,7 +25,7 @@ exports.post = (request, response, next) => {
               }
               response.status(200).send(JSON.stringify({ err: null, message: 'تم إدخال الموظف بنجاح , سيتم تحويلك  إلى قائمة الموظفين ' }));
             })
-            .catch(err => console.log(err));
+            .catch(err => next(err));
         } else {
           response.status(401).send(JSON.stringify({ err: 'تعذر الإدخال , رقم الهوية مستخدم مسبقا ! ' }));
         }

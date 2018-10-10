@@ -12,8 +12,8 @@ const { fixedVarible } = require('../../database/models');
 const salaryCalculations = async (employee, date, variables) => {
   const bonus = convertToCamelCase(employee);
   const bunuses = bunusesOperations(bonus, variables);
-  const dedeuctions = await deductionsQuery(bunuses, variables);
-  const employeeExemptions = await exemptions(bunuses, variables);
+  const dedeuctions = await deductionsQuery(bunuses);
+  const employeeExemptions = await exemptions(bunuses);
   const finalExemptions = exemptionsOperations(employeeExemptions, dedeuctions, variables);
   const finalDeductions = deductionOperations(bunuses, dedeuctions, finalExemptions, variables);
   let employeeBeforeSalary = Object.assign(bunuses, finalExemptions, finalDeductions);
