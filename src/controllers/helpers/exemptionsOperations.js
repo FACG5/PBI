@@ -1,10 +1,10 @@
 const convertToCamelCase = require('camelcase-keys-deep');
 
 const exemptionsOperations = (exemptions, afterDeductions, variables) => {
-  const { saving, deductions_social_fund: deductionsSocialFund } = afterDeductions;
+  const { savings, deductions_social_fund: deductionsSocialFund } = afterDeductions;
   const employeeExemptions = convertToCamelCase(exemptions);
   const { dolar } = variables;
-  employeeExemptions.boxesExemptions = (deductionsSocialFund + saving) * dolar;
+  employeeExemptions.boxesExemptions = (deductionsSocialFund + savings) * dolar;
   employeeExemptions.totalExemptions = employeeExemptions.exemptionUniversity
       + employeeExemptions.exemptionHouse
       + employeeExemptions.exemptionResident + employeeExemptions.transportationsExemptions

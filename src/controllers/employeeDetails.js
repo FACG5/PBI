@@ -25,6 +25,9 @@ exports.get = async (req, res, next) => {
     if (!employeeData) {
       return res.render('employeeDetails', {
         err: 'Employee Not Found',
+        cssFile: ['employeeDetails'],
+        jsFile: ['employeeDetails'],
+        title: 'تفاصيل الموظف ',
       });
     }
     return res.render('employeeDetails', {

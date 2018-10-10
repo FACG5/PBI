@@ -1,6 +1,6 @@
 const { employee } = require('../database/models');
 
-exports.get = (request, response) => {
+exports.get = (request, response, next) => {
   employee
     .findAll({
       attributes: [
@@ -15,5 +15,5 @@ exports.get = (request, response) => {
       response.render('employees', {
         result, cssFile: ['tables'], jsFile: ['employees'], activePage: { employee: true }, title: 'قائمة الموظفين',
       });
-    });
+    }).catch(err => next(err));
 };

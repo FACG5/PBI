@@ -44,11 +44,23 @@ const report = sequelize.define('report', {
     type: Sequelize.DOUBLE,
     defaultValue: 0.0,
   },
+  salary_after_bonus: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  salary_after_bonus_nis: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
   allowance_jerusalem: {
     type: Sequelize.DOUBLE,
     defaultValue: 0.0,
   },
   annual_rate: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  total_taxes: {
     type: Sequelize.DOUBLE,
     defaultValue: 0.0,
   },
@@ -85,6 +97,18 @@ const report = sequelize.define('report', {
     defaultValue: 0.0,
   },
   total_deductions: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  salary_after_deduction: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  salary_after_deduction_nis: {
+    type: Sequelize.DOUBLE,
+    defaultValue: 0.0,
+  },
+  totla_contribtuions: {
     type: Sequelize.DOUBLE,
     defaultValue: 0.0,
   },
