@@ -9,12 +9,12 @@ exports.client = (req, res) => {
 };
 
 exports.server = (err, req, res, next) => {
-  res.status(500).render('errors', {
+  if (req.method === 'POST') return res.status(500).send({ err: 'Internal server errors' });
+  return res.status(500).render('errors', {
     layout: 'errors',
     statusCode: 500,
     errorMessage: 'Internal server errors',
     style: ['errors'],
     title: 'Internal Server Error ',
-
   });
 };
