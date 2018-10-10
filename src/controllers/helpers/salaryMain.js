@@ -9,8 +9,8 @@ const { fixedVarible } = require('../../database/models');
 
 const salaryCalculations = async (employee, date, variables) => {
   const bonus = convertToCamelCase(employee);
-  const dedeuctions = await deductionsQuery(bonus, variables);
-  const employeeExemptions = await exemptions(bonus, variables);
+  const dedeuctions = await deductionsQuery(bonus);
+  const employeeExemptions = await exemptions(bonus);
   const finalExemptions = await exemptionsOperations(employeeExemptions, dedeuctions, variables);
   const finalDeductions = await deductionOperations(bonus, dedeuctions, finalExemptions, variables);
   let employeeBeforeSalary = Object.assign(bonus, finalExemptions, finalDeductions);
