@@ -10,7 +10,7 @@ exports.get = async (req, res, next) => {
         err: 'Employee Not Found',
         cssFile: ['employeeDetails'],
         jsFile: ['employeeDetails'],
-        title: 'تفاصيل الموظف',
+        title: 'تفاصيل الموظف ',
       });
     } else {
       const employeeDataCamel = convertSnakeToCamel(employeeData.dataValues);

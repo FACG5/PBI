@@ -10,9 +10,7 @@ exports.post = (request, response, next) => {
   const path = `uploads/${nameOfFile}.${ext}`;
 
   fs.writeFile(path, renderStream, (err) => {
-    if (err) {
-      next(err);
-    }
-    response.send(JSON.stringify({ path }));
+    if (err) return next(err);
+    return response.send(JSON.stringify({ path }));
   });
 };
