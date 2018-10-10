@@ -39,7 +39,7 @@ const addEmployee = (path) => {
         if (result.err) {
           return swal('', result.err, 'error');
         }
-        return swal('', result.message, 'success').then((value) => {
+        return swal('', result.message, 'success').then(() => {
           window.location.href = '/employees';
         });
       });
