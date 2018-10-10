@@ -18,8 +18,14 @@ exports.get = (req, res, next) => {
 
 exports.post = (req, res, next) => {
   const input = req.body;
+  let validationValue = true;
   Object.values(input).forEach((value) => {
-    if (validator.isNumeric(value)) {
+    if (!validator.isNumeric(value)) {
+      validationValue = false;
+    }
+  });
+  if (validationValue === true) {
+    try {
       fixedVariables.findAll({ where: { id: 1 } }).then((result) => {
         if (!result.length) {
           fixedVariables
@@ -28,8 +34,7 @@ exports.post = (req, res, next) => {
               res.send(
                 JSON.stringify({ err: null, message: 'تم إنشاء البيانات بنجاح' }),
               );
-            })
-            .catch(err => next(err));
+            });
         } else {
           fixedVariables
             .update(input, { where: { id: 1 } })
@@ -41,12 +46,15 @@ exports.post = (req, res, next) => {
                   title: 'إعدادات عامة',
                 }),
               );
-            })
-            .catch(err => next(err));
+            });
         }
       });
-    } else {
-      res.status(404).send({ err: 'يجب إدخال رقم' });
+    } catch (err) {
+      next(err);
     }
-  });
+  } else {
+    res.send(
+      JSON.stringify({ err: 'يجب ادخال رقم' }),
+    );
+  }
 };
