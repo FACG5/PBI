@@ -21,7 +21,7 @@ exports.delete = (req, res, next) => {
     });
 };
 
-exports.post = (req, res) => {
+exports.post = (req, res, next) => {
   const purchaseBoxData = req.body;
   if (purchaseBoxData.name.trim()) {
     purchaseBox
@@ -38,7 +38,7 @@ exports.post = (req, res) => {
         } else {
           res.status(401).send(JSON.stringify({ err: 'الاسم موجود مسبقا' }));
         }
-      });
+      }).catch(err => next(err));
   } else {
     res.status(401).send(JSON.stringify({ err: 'الرجاء إدخال بيانات' }));
   }
