@@ -1,4 +1,6 @@
 const salaryMain = require('./helpers/salaryMain');
+const excelMain = require('./helpers/excelSheets/excelSheetMain');
+
 const { report } = require('../database/models');
 
 exports.get = (req, res) => {
@@ -32,4 +34,10 @@ exports.post = async (req, res, next) => {
   } catch (err) {
     next(err);
   }
+};
+
+exports.downloadExcel = async (req, res) => {
+  const { date } = req.params;
+  const reports = await excelMain(date);
+  res.send(reports);
 };
