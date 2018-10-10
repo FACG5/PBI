@@ -15,13 +15,11 @@ const specification = {
     displayName: 'علاوة زوجة',
     headerStyle: styles.column,
     width: 60,
-
   },
   childAllownace: {
     displayName: 'علاوة أولاد',
     headerStyle: styles.column,
     width: 60,
-
   },
   allowanceGasoline: {
     displayName: 'بدل بنزين',
@@ -31,7 +29,6 @@ const specification = {
     displayName: 'بدل مهام',
     headerStyle: styles.column,
     width: 40,
-
   },
   transportation: {
     displayName: 'مواصلات',
