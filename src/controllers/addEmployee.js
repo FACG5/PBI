@@ -19,8 +19,8 @@ exports.post = (request, response, next) => {
             .then((employee) => {
               if (Object.keys(newEmployeeData.certifications).length) {
                 const { id } = employee.dataValues;
-                const { cerficationName, path } = newEmployeeData.certifications;
-                certifications.create({ name: cerficationName, employee_id: id, link: path }).then((result) => {       
+                const { cerficationName, link } = newEmployeeData.certifications;
+                certifications.create({ name: cerficationName, employee_id: id, link }).then((result) => {       
                 });
               }
               response.status(200).send(JSON.stringify({ err: null, message: 'تم إدخال الموظف بنجاح , سيتم تحويلك  إلى قائمة الموظفين ' }));

@@ -39,6 +39,7 @@ router.post('/carts', autheticate, carts.post);
 router.put('/carts', autheticate, carts.put);
 router.post('/uploadFiles', autheticate, files.post);
 router.get('/downloadReports/:date', autheticate, reports.downloadExcel);
+router.get('/download/:fileName', autheticate, files.get);
 
 router.use(errors.client);
 router.use(errors.server);

@@ -4,11 +4,12 @@ const bonusQueryOneEmployee = require('./../database/query/bonusQueryOneEmployee
 const deductionsQuery = require('./../database/query/deductionsQuery');
 const exemptions = require('./../database/query/exemptions');
 const purchasesEmployees = require('../database/query/purchaseEmployees');
+const certficates = require('../database/models/certificate');
 
 exports.get = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const employeeData = await employee.findById(id);
+    const employeeData = await employee.findById(id, { include: [certficates] });
     if (!employeeData) {
       return res.render('employeeDetails', {
         err: 'Employee Not Found',
