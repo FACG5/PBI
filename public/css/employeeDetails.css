@@ -81,7 +81,7 @@
   background-color: #201a3a;
 }
 
-.first-box ul {
+.first-box > ul {
   list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -90,15 +90,13 @@
 
 .input-field {
   border-width: 0px !important;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: bold;
   letter-spacing: 1px;
   color: #c19827;
 }
 
-#input-field-big {
-  max-width: 357px !important;
-}
+
 
 .input-field-editable {
   border-width: 0px;
@@ -110,13 +108,15 @@
 }
 
 .first-box ul li {
-  padding: 15px 10px;
-  font-size: 15px;
+  padding: 8px 14px;
+  font-size: 13px;
   color: #201a3a;
   font-weight: bold;
   letter-spacing: 1px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-column-gap: 10px;
+
 }
 
 #div1 ul li:first-child {
@@ -127,11 +127,11 @@
   width: 493px;
 }
 
-.full {
+/* .full {
   grid-template-columns: 1fr 1fr 1fr !important;
   grid-column-gap: 20px;
   grid-column: 1/3;
-}
+} */
 
 .inputfile {
   width: 0.1px;
@@ -190,7 +190,7 @@
 }
 
 .first-box div {
-  max-width: 165px;
+  max-width: 100px;
 }
 .first-box  > div {
   max-width: 400px !important;
@@ -222,4 +222,17 @@
   background: #fff;
   width: 170px;
   font-weight: bold;
+}
+
+form{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 10px;
+}
+form > ul {
+
+  width: 300px
+} 
+.pusrchaseBoxList {
+  display: block !important;
 }
