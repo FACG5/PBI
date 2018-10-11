@@ -24,13 +24,8 @@ exports.get = async (req, res, next) => {
     const deductions = convertSnakeToCamel(deductionsData);
     const exemptionsData = await exemptions({ employeeId: id, totalAllownace: bonusEmployee.totalAllownace });
     const exemption = convertSnakeToCamel(exemptionsData);
-<<<<<<< HEAD
-    const purchasesEmployeesResult = await purchasesEmployees(id);    
+    const purchasesEmployeesResult = await purchasesEmployees(id);
     
-=======
-  const purcasePayment = purcasePayment(id);
-
->>>>>>> e037a1ee35b7f671078ac2b0fb7afd90e93822bf
     res.locals.cssFile = ['employeeDetails', 'cart'];
     res.locals.jsFile = ['employeeDetails'];
     res.locals.title = 'تفاصيل الموظف';
