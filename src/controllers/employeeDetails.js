@@ -31,16 +31,14 @@ exports.get = async (req, res, next) => {
     res.locals.title = 'تفاصيل الموظف';
     res.locals.err = null;
 
-
     return res.render('employeeDetails', {
-      // purchaseBoxValues,
+      purchasesEmployeesResult,
       obj: employeeDataCamel,
       id: req.params.id,
       objBouns: bonusEmployee,
       objDeductions: deductions,
       objExemption: exemption,
       activePage: { employee: true },
-      // carts,
     });
   } catch (err) {
     return next(err);
