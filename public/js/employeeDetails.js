@@ -1,4 +1,4 @@
-/* global swal show */
+/* global swal */
 /* eslint no-param-reassign: 0 */
 /* exported show */
 
@@ -24,21 +24,27 @@ const sendData = (form) => {
         return swal('', result.err, 'error');
       }
       return swal('', result.message, 'success').then(() => {
-        window.location.href = `/employee/${holdData.id}`;
+        location.assign(`/employee/${holdData.id}#${form.name}`);
+        location.reload(true);
       });
     })
     .catch(err => swal('', err, 'error'));
 };
 
 const show = (event, divName) => {
+  const tabBody = document.querySelector('.tabBody');
+  const currentBody = tabBody.querySelector(divName);
+  if (!currentBody) return;
+  const boxDiv = currentBody.parentElement.parentElement;
+  const currentTab = boxDiv.querySelector(divName);
   links.forEach((link) => {
-    link.className = link.className.replace('tabActive', '');
+    link.classList.remove('tabActive');
   });
+  currentTab.classList.add('tabActive');
   singleBody.forEach((body) => {
     body.style.display = 'none';
   });
-  document.getElementById(divName).style.display = 'block';
-  event.currentTarget.className += ' tabActive';
+  currentBody.style.display = 'block';
 };
 
 const editBtn = document.querySelectorAll('.editbtn');
@@ -89,4 +95,9 @@ btnSave.forEach((item) => {
     event.target.classList.add('none');
     sendData(form);
   });
+});
+
+window.addEventListener('load', () => {
+  const tab = window.location.href.match(/#\w+/);
+  if (tab && tab[0].startsWith('#')) show('', tab[0]);
 });
