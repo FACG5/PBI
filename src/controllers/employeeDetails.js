@@ -3,17 +3,17 @@ const convertSnakeToCamel = require('./helpers/convertSnakeToCamel');
 const bonusQueryOneEmployee = require('./../database/query/bonusQueryOneEmployee');
 const deductionsQuery = require('./../database/query/deductionsQuery');
 const exemptions = require('./../database/query/exemptions');
+const certficates = require('../database/models/certificate');
 
 exports.get = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const employeeData = await employee.findById(id);
+    const employeeData = await employee.findById(id, { include: [certficates] });
     const employeeDataCamel = convertSnakeToCamel(employeeData.dataValues);
     const bonus = await bonusQueryOneEmployee(id);
     const bonusEmployee = convertSnakeToCamel(bonus[0]);
     const deductionsData = await deductionsQuery({ employeeId: id });
     const deductions = convertSnakeToCamel(deductionsData);
-
     const exemptionsData = await exemptions({ employeeId: id, totalAllownace: bonusEmployee.totalAllownace });
     const exemption = convertSnakeToCamel(exemptionsData);
 
