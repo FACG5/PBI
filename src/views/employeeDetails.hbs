@@ -212,19 +212,16 @@
           <ul>
           <li class="full">
             <span>صندوق مشتريات </span>
-            <div><input value="{{objDeductions.purchaseBoxes}}" name="purchaseBoxes" type="number" class="input-field input-field-div3"
-                readonly></div>
+            <div><span>{{objDeductions.purchaseBoxes}}</span></div>
           </li>
           <li  class="pusrchaseBoxList">
             <ul>
-              {{#if carts.length}}
-              {{#each carts}}
-              <li value="{{this.dataValues.id}}">
-                <span>- {{this.dataValues.name}}</span>
-                {{!-- {{#each purchaseBoxValues}} --}}
-                <div><input value="44" name="purchaseBoxes" type="number" class="input-field pusrchaseBox"
+              {{#if purchasesEmployeesResult.length}}
+              {{#each purchasesEmployeesResult}}
+              <li class="pusrchaseBoxLi">
+                <span>- {{this.name}}</span>
+                <div><input id="{{this.purchaseBox_id}}" value="{{this.payment}}" type="number" class="input-field pusrchaseBox"
                 readonly></div>
-                {{!-- {{/each}} --}}
               </li>
               {{/each}}
               {{/if}}
