@@ -127,12 +127,6 @@
   width: 493px;
 }
 
-/* .full {
-  grid-template-columns: 1fr 1fr 1fr !important;
-  grid-column-gap: 20px;
-  grid-column: 1/3;
-} */
-
 .inputfile {
   width: 0.1px;
   height: 0.1px;
