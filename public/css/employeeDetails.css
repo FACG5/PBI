@@ -192,6 +192,9 @@
 .first-box div {
   max-width: 165px;
 }
+.first-box  > div {
+  max-width: 400px !important;
+}
 
 .first-box .editbtn {
   box-shadow: -1px 1px 3px 0px #201a3a;

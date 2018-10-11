@@ -3,6 +3,7 @@ const convertSnakeToCamel = require('./helpers/convertSnakeToCamel');
 const bonusQueryOneEmployee = require('./../database/query/bonusQueryOneEmployee');
 const deductionsQuery = require('./../database/query/deductionsQuery');
 const exemptions = require('./../database/query/exemptions');
+const purchasesEmployees = require('../database/query/purchaseEmployees');
 
 exports.get = async (req, res, next) => {
   try {
@@ -13,11 +14,11 @@ exports.get = async (req, res, next) => {
     const bonusEmployee = convertSnakeToCamel(bonus[0]);
     const deductionsData = await deductionsQuery({ employeeId: id });
     const deductions = convertSnakeToCamel(deductionsData);
-
     const exemptionsData = await exemptions({ employeeId: id, totalAllownace: bonusEmployee.totalAllownace });
     const exemption = convertSnakeToCamel(exemptionsData);
-
-    res.locals.cssFile = ['employeeDetails'];
+    const purchasesEmployeesResult = await purchasesEmployees(id);    
+    
+    res.locals.cssFile = ['employeeDetails', 'cart'];
     res.locals.jsFile = ['employeeDetails'];
     res.locals.title = 'تفاصيل الموظف';
     res.locals.err = null;
