@@ -12,19 +12,19 @@ const uploadFiles = async () => {
 
   let result = await fetch('/uploadFiles', requestOptions);
   result = await result.json();
-  const { path } = result;
-  return path;
+  const { name } = result;
+  return name;
 };
-const addEmployee = (path) => {
+const addEmployee = (link) => {
   const employeeData = new FormData(newEmpForm);
   const newEmpData = {};
   employeeData.forEach((value, key) => {
     newEmpData[key] = value;
   });
 
-  if (path) {
+  if (link) {
     const cerficationName = newEmpData.certificationName;
-    const cerfication = { cerficationName, path };
+    const cerfication = { cerficationName, link };
     newEmpData.certifications = cerfication;
   }
   if (newEmpData.name.trim() && newEmpData.idNumber.trim()) {
@@ -50,8 +50,8 @@ const addEmployee = (path) => {
 
 addEmployeeButton.addEventListener('click', async () => {
   if (cerfications.files[0]) {
-    const path = await uploadFiles();
-    addEmployee(path);
+    const name = await uploadFiles();
+    addEmployee(name);
   } else {
     addEmployee();
   }

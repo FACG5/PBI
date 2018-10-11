@@ -117,9 +117,11 @@
           </li>
           <li class="full">
             <span>الشهادات العلمية</span>
+            {{#if obj.certificates.length}}
             <div>
-              <span><a href="#">علوم بيئة</a></span>
+              <span><a href="/download/{{obj.certificates.0.dataValues.link}}">{{obj.certificates.0.dataValues.name}} - إضغط للتحميل</a></span>
             </div>
+            {{/if}}
           </li>
         </ul>
         <input value="{{id}}" name="id" class="none">
