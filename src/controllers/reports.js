@@ -36,8 +36,12 @@ exports.post = async (req, res, next) => {
   }
 };
 
-exports.downloadExcel = async (req, res) => {
-  const { date } = req.params;
-  const reports = await excelMain(date);
-  res.send(reports);
+exports.downloadExcel = async (req, res, next) => {
+  try {
+    const { date } = req.params;
+    const reports = await excelMain(date);
+    res.send(reports);
+  } catch (err) {
+    next(err);
+  }
 };

@@ -9,6 +9,15 @@ const bunusesOperations = require('./bunusesOperations');
 
 const { fixedVarible } = require('../../database/models');
 
+const towDecimalNumber = (employee) => {
+  Object.keys(employee).map((key) => {
+    const value = employee[key];
+    if (typeof value === 'number' && value % 1 !== 0) employee[key] = employee[key].toFixed(2);
+    employee[key] = employee[key];
+  });
+  return employee;
+};
+
 const salaryCalculations = async (employee, date, variables) => {
   const bonus = convertToCamelCase(employee);
   const bunuses = bunusesOperations(bonus, variables);
@@ -16,10 +25,10 @@ const salaryCalculations = async (employee, date, variables) => {
   const employeeExemptions = await exemptions(bunuses);
   const finalExemptions = exemptionsOperations(employeeExemptions, dedeuctions, variables);
   const finalDeductions = deductionOperations(bunuses, dedeuctions, finalExemptions, variables);
-  let employeeBeforeSalary = Object.assign(bunuses, finalExemptions, finalDeductions);
-  employeeBeforeSalary = finalSalaryCalculation(employeeBeforeSalary);
-  employeeBeforeSalary.date = date;
-  return employeeBeforeSalary;
+  const employeeBeforeSalary = Object.assign(bunuses, finalExemptions, finalDeductions);
+  const employeeAfterSalary = finalSalaryCalculation(employeeBeforeSalary);
+  employeeAfterSalary.date = date;
+  return towDecimalNumber(employeeAfterSalary);
 };
 
 const salaryMain = async (date) => {
