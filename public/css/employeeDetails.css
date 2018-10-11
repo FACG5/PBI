@@ -230,3 +230,8 @@ form > ul {
 .pusrchaseBoxList {
   display: block !important;
 }
+.pusrchaseBoxLi{
+  padding: 1px 14px !important ;
+  
+
+}
