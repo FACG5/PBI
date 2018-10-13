@@ -10,6 +10,10 @@
   grid-template-columns: 1fr 1fr;
   padding: 30px 54px;
 }
+.add{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 .box ul li {
   padding: 15px 10px;
   font-size: 15px;
@@ -61,11 +65,11 @@
   color: #ffffff;
   border-radius: 5px;
   padding: 5px 10px;
-  width: 100px;
   font-weight: bold;
   transition-duration: 0.3s;
   cursor: pointer;
 }
+
 .box button:hover {
   background-color: #3f3663;
 }
