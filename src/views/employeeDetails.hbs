@@ -74,6 +74,8 @@
               </select>
             </div>
           </li>
+          </ul>
+          <ul>  
           <li>
             <span>الدرجة</span>
             <div>
@@ -133,14 +135,6 @@
       <form class="form-update" name="bouns" id="form-div2">
         <ul>
           <li>
-            <span>علاوة زوجة</span>
-            <div><span>{{objBouns.wifeAllowance}}</span></div>
-          </li>
-          <li>
-            <span>علاوة الاولاد</span>
-            <div><span>{{objBouns.childAllownace}}</span></div>
-          </li>
-          <li>
             <span>المواصلات</span>
             <div><input name="transportation" value="{{obj.transportation}}" type="number" class="input-field input-field-div2"
                 readonly></div>
@@ -165,14 +159,24 @@
             <div><input value="{{obj.allowanceWork}}" type="number" name="allowanceWork" class="input-field input-field-div2"
                 readonly></div>
           </li>
+          </ul>
+          <ul>
           <li>
             <span>نقاط الموظف</span>
             <div><input value="{{obj.points}}" type="number" name="points" class="input-field input-field-div2" readonly></div>
           </li>
           <li>
-            <span>نسبة العلاوة سنوية</span>
+            <span>العلاوة السنوية</span>
             <div><input value="{{obj.annualRate}}" type="number" name="annualRate" class="input-field input-field-div2"
                 readonly></div>
+          </li>
+          <li>
+            <span>علاوة زوجة</span>
+            <div><span>{{objBouns.wifeAllowance}}</span></div>
+          </li>
+          <li>
+            <span>علاوة الاولاد</span>
+            <div><span>{{objBouns.childAllownace}}</span></div>
           </li>
           <li>
             <span>مجموع العلاوات</span>
@@ -203,15 +207,28 @@
                 readonly></div>
           </li>
           <li>
-            <span>صندوق مشتريات </span>
-            <div><span>{{objDeductions.purchaseBoxes}}</span></div>
-          </li>
-          <li>
             <span>الادخار</span>
             <div><span>{{objDeductions.savings}}</span></div>
           </li>
-          
-
+          </ul>
+          <ul>
+          <li class="full">
+            <span>صندوق مشتريات </span>
+            <div><span>{{objDeductions.purchaseBoxes}}</span></div>
+          </li>
+          <li  class="pusrchaseBoxList">
+            <ul>
+              {{#if purchasesEmployeesResult.length}}
+              {{#each purchasesEmployeesResult}}
+              <li class="pusrchaseBoxLi">
+                <span>- {{this.name}}</span>
+                <div><input id="{{this.purchaseBox_id}}" value="{{this.payment}}" type="number" class="input-field pusrchaseBox"
+                readonly></div>
+              </li>
+              {{/each}}
+              {{/if}}
+            </ul>
+          </li>
         </ul>
         <input value="{{id}}" name="id" class="none">
       </form>
@@ -231,6 +248,8 @@
             <div><input value="{{obj.exemptionResident}}" type="text" name="exemptionResident" class="input-field input-field-div4"
                 readonly></div>
           </li>
+          </ul>
+          <ul>
           <li>
             <span>اعفاء جامعي</span>
             <div><input value="{{obj.exemptionUniversity}}" type="text" name="exemptionUniversity" class="input-field input-field-div4"

@@ -1,13 +1,18 @@
-/* global swal */
-/* eslint no-param-reassign: 0 */
-/* exported show */
 
 const links = document.querySelectorAll('.tablink');
 const singleBody = document.querySelectorAll('.singleBody');
 const btnSave = document.querySelectorAll('.btn-save');
+const pusrchaseBox = document.querySelectorAll('.pusrchaseBox');
 
 const sendData = (form) => {
+  const payment = [];
+  pusrchaseBox.forEach((element) => {
+    const pusrchaseBoxPayment = { id: element.id, paymentValue: element.value };
+    payment.push(pusrchaseBoxPayment);
+  });
+
   const holdData = {};
+  holdData.payment = payment;
   const arr = Array.from(form.elements);
   arr.forEach((element) => {
     holdData[element.name] = element.value;
