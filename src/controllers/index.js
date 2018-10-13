@@ -24,6 +24,7 @@ router.get('/', autheticate, overview.get);
 router.get('/generalSetting', autheticate, generalSettings.get);
 router.post('/generalSetting', autheticate, convertToSnake, generalSettings.post);
 router.get('/employees', autheticate, employees.get);
+router.post('/employees/reset', autheticate, employees.reset);
 router.get('/addEmployee', autheticate, addEmployee.get);
 router.post('/addEmployee', autheticate, convertToSnake, addEmployee.post);
 router.put('/employee', autheticate, convertToSnake, editEmployee.put);
