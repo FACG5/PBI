@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+{{>employeeReportHead}}
+</head>
+
+<body>
+{{{body}}}
+    {{#each jsFile}}
+    <script src="/js/{{this}}.js"></script> 
+{{/each}}
+
+</body>
+
