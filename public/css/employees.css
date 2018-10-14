@@ -1,3 +1,4 @@
+
 .box1 {
   border: 1.5px solid #0000000d;
   box-shadow: -2px 1px 3px 0px #201a3a3d;
@@ -107,4 +108,30 @@
 }
 .inputfile{
   box-shadow: none !important;
+}
+@keyframes spin {
+  from {transform:rotate(360deg);}
+  to {transform:rotate(0deg);}
+}
+
+.loading {
+  position: relative;
+  box-shadow: -1px 1px 1px 0px #efedfb;
+  color: #cec7c7 !important;
+  background: #7e7c86 !important;
+}
+
+.loading:before {
+  content: '';
+  position: absolute;
+  left: -70px;
+  height: 25px;
+  width: 25px;
+  border: 2px solid transparent;
+  border-left: 2px solid purple;
+  border-right: 2px solid purple;
+  border-radius: 50%;
+  animation-name: spin;
+  animation-duration: .5s;
+  animation-iteration-count: infinite; 
 }

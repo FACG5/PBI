@@ -15,7 +15,7 @@ const uploadFiles = async () => {
   const { name } = result;
   return name;
 };
-const addEmployee = (link) => {
+const addEmployee = (link, cb = () => {}) => {
   const employeeData = new FormData(newEmpForm);
   const newEmpData = {};
   employeeData.forEach((value, key) => {
@@ -34,11 +34,14 @@ const addEmployee = (link) => {
       headers: {
         'Content-Type': 'application/json',
       },
-    }).then(result => result.json())
+    })
+      .then(result => result.json())
       .then((result) => {
         if (result.err) {
+          cb();
           return swal('', result.err, 'error');
         }
+        cb();
         return swal('', result.message, 'success').then(() => {
           window.location.href = '/employees';
         });
@@ -48,11 +51,17 @@ const addEmployee = (link) => {
   }
 };
 
-addEmployeeButton.addEventListener('click', async () => {
+addEmployeeButton.addEventListener('click', async (e) => {
   if (cerfications.files[0]) {
     const name = await uploadFiles();
-    addEmployee(name);
+    e.target.classList.add('loading');
+    addEmployee(name, () => {
+      e.target.classList.remove('loading');
+    });
   } else {
-    addEmployee();
+    e.target.classList.add('loading');
+    addEmployee(null, () => {
+      e.target.classList.remove('loading');
+    });
   }
 });
