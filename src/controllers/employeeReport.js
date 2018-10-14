@@ -4,6 +4,8 @@ const report = require('../database/models/report');
 const employee = require('../database/models/employee');
 
 exports.get = async (request, response, next) => {
+  console.log(request.query);
+  
   try {
     const columnsName = convertToSnakeCase(request.query);
     const { id, date } = request.query;
