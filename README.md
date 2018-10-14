@@ -1,6 +1,7 @@
 # Palestinian Banking Institute
 
 Link of website [Here ](https://p-b-i.herokuapp.com/)
+Link Of Prototype [Here ](https://www.figma.com/file/Tb17P8kRu0C0qRduENhAVCwS/PBI?node-id=1%3A2)
 
  ---------------------------
 ### Problem Statement
@@ -36,10 +37,6 @@ As a HR Manager:
 - Create a ```config.env``` file
 - Add ```DB_URL AND SECRET``` 
 - run ```npm run start``` to run the project
-
-
- ---------------------------
-Link Of Prototype [Here ](https://www.figma.com/file/Tb17P8kRu0C0qRduENhAVCwS/PBI?node-id=1%3A2)
 
  ---------------------------
 ### Tech stack
