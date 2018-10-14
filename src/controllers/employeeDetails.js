@@ -5,10 +5,12 @@ const deductionsQuery = require('./../database/query/deductionsQuery');
 const exemptions = require('./../database/query/exemptions');
 const purchasesEmployees = require('../database/query/purchaseEmployees');
 const certficates = require('../database/models/certificate');
+const report = require('../database/models/report');
 
 exports.get = async (req, res, next) => {
   try {
     const { id } = req.params;
+    const employeeReports = await report.findAll({ attributes: ['date'], where: { employee_id: id } });    
     const employeeData = await employee.findById(id, { include: [certficates] });
     if (!employeeData) {
       return res.render('employeeDetails', {
@@ -31,8 +33,8 @@ exports.get = async (req, res, next) => {
     res.locals.jsFile = ['employeeDetails'];
     res.locals.title = 'تفاصيل الموظف';
     res.locals.err = null;
-
     return res.render('employeeDetails', {
+      employeeReports,
       purchasesEmployeesResult,
       obj: employeeDataCamel,
       id: req.params.id,
