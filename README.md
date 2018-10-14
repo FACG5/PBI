@@ -36,7 +36,7 @@ As a HR Manager:
 - Clone this repository
 - Run ```npm install```
 - Create a ```config.env``` file
-- Add ```DB_URL AND SECRET``` 
+- Add ```db_username,db_password,db_name AND SECRET``` 
 - run ```npm run start``` to run the project
 
  ---------------------------
