@@ -1,0 +1,81 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Cairo';
+}
+
+.invoice-box {
+    direction: rtl;
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 800px;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #eee;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+    color: #555;
+}
+.logo{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+}
+.title{
+    align-self: center;
+    justify-self: end;
+    font-size: 15px;
+}
+hr{
+    margin-top: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .150);
+}
+.personalDetails{
+    margin-top: 50px;
+}
+.salaryDetails{
+    display: grid;
+    grid-template-columns: 4fr 1fr 4fr;
+    box-shadow: 3px -4px 8px rgba(214, 208, 208, 0.15);
+    margin-top: 40px;
+    padding: 20px;
+    grid-column-gap: 10px;
+}
+.salaryDetails .information{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap:1fr 2fr 10px;
+}
+.personalDetails .information{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap:1fr 2fr 10px;
+}
+.invoice-box span{
+    display: block;
+    margin-top:3px;
+}
+.vLine{
+    justify-self: center;
+    width: 0.1px;
+    box-shadow: 0px 0px 4px 1px #202a3a47;
+}
+.deductions .deductionsTitle{
+    text-decoration: underline;
+}
+.salaryDetails .information span:nth-child(2){
+    justify-self: end;
+}
+.salaryDetails .finalSalary{
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.sig {
+ margin-right: 450px;
+ display: grid;
+ grid-template-columns: 1fr;
+padding: 20px;
+justify-items: center;
+}

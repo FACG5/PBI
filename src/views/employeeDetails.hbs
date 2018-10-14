@@ -1,7 +1,6 @@
 {{#if err}}
 <h1 class='title'>الموظف غير موجود</h1>
-<hr>
-{{else}}
+<hr> {{else}}
 <h1 class='title'>{{obj.name}}</h1>
 <hr>
 <div class="box">
@@ -16,7 +15,7 @@
   </div>
   <div class="tabBody">
     <div class="singleBody first-box" id="main">
-      <form class="form-update" name="main" id="form-div1">
+      <form class="form-update form" name="main" id="form-div1">
         <ul>
           <li class="full">
             <span>الاسم رباعي</span>
@@ -41,7 +40,7 @@
             <div>
               <span class="input-field-div1" readonly> {{obj.socialStatus}}</span>
               <select name="socialStatus" class='none status' disabled>
-    <option value="{{obj.socialStatus}}" hidden="hidden" selected="selected">{{obj.socialStatus}}</option>
+                <option value="{{obj.socialStatus}}" hidden="hidden" selected="selected">{{obj.socialStatus}}</option>
                 <option value="أعزب">أعزب</option>
                 <option value="متزوج">متزوج</option>
                 <option value="مطلق">مطلق</option>
@@ -74,14 +73,14 @@
               </select>
             </div>
           </li>
-          </ul>
-          <ul>  
+        </ul>
+        <ul>
           <li>
             <span>الدرجة</span>
             <div>
               <span class="input-field-div1">{{obj.class}} </span>
               <select name="class" class='none status' disabled>
-                <option selected="selected" value="{{obj.class}}"  hidden="hidden">{{obj.class}}</option>
+                <option selected="selected" value="{{obj.class}}" hidden="hidden">{{obj.class}}</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -121,7 +120,9 @@
             <span>الشهادات العلمية</span>
             {{#if obj.certificates.length}}
             <div>
-              <span><a href="/download/{{obj.certificates.0.dataValues.link}}">{{obj.certificates.0.dataValues.name}} - إضغط للتحميل</a></span>
+              <span><a href="/download/{{obj.certificates.0.dataValues.link}}">{{obj.certificates.0.dataValues.name}} - إضغط
+                  للتحميل
+                </a></span>
             </div>
             {{/if}}
           </li>
@@ -132,7 +133,7 @@
       <button class="btn-save none">حفظ</button>
     </div>
     <div class="singleBody first-box" id="bouns">
-      <form class="form-update" name="bouns" id="form-div2">
+      <form class="form-update form" name="bouns" id="form-div2">
         <ul>
           <li>
             <span>المواصلات</span>
@@ -159,16 +160,15 @@
             <div><input value="{{obj.allowanceWork}}" type="number" name="allowanceWork" class="input-field input-field-div2"
                 readonly></div>
           </li>
-          </ul>
-          <ul>
+        </ul>
+        <ul>
           <li>
             <span>نقاط الموظف</span>
             <div><input value="{{obj.points}}" type="number" name="points" class="input-field input-field-div2" readonly></div>
           </li>
           <li>
             <span>العلاوة السنوية</span>
-            <div><input value="{{obj.annualRate}}" type="number" name="annualRate" class="input-field input-field-div2"
-                readonly></div>
+            <div><input value="{{obj.annualRate}}" type="number" name="annualRate" class="input-field input-field-div2" readonly></div>
           </li>
           <li>
             <span>علاوة زوجة</span>
@@ -189,7 +189,7 @@
       <button class="btn-save none">حفظ</button>
     </div>
     <div class="singleBody first-box" id="deductions">
-      <form class="form-update" name="deductions" id="form-div3">
+      <form class="form-update form" name="deductions" id="form-div3">
         <ul>
           <li>
             <span>تامين صحي</span>
@@ -210,23 +210,21 @@
             <span>الادخار</span>
             <div><span>{{objDeductions.savings}}</span></div>
           </li>
-          </ul>
-          <ul>
+        </ul>
+        <ul>
           <li class="full">
             <span>صندوق مشتريات </span>
             <div><span>{{objDeductions.purchaseBoxes}}</span></div>
           </li>
-          <li  class="pusrchaseBoxList">
+          <li class="pusrchaseBoxList">
             <ul>
-              {{#if purchasesEmployeesResult.length}}
-              {{#each purchasesEmployeesResult}}
+              {{#if purchasesEmployeesResult.length}} {{#each purchasesEmployeesResult}}
               <li class="pusrchaseBoxLi">
                 <span>- {{this.name}}</span>
                 <div><input id="{{this.purchaseBox_id}}" value="{{this.payment}}" type="number" class="input-field pusrchaseBox"
-                readonly></div>
+                    readonly></div>
               </li>
-              {{/each}}
-              {{/if}}
+              {{/each}} {{/if}}
             </ul>
           </li>
         </ul>
@@ -236,7 +234,7 @@
       <button class="btn-save none">حفظ</button>
     </div>
     <div class="singleBody first-box" id="exemption">
-      <form class="form-update" name="exemption" id="form-div4">
+      <form class="form-update form" name="exemption" id="form-div4">
         <ul>
           <li>
             <span>اعفاء سكن</span>
@@ -248,8 +246,8 @@
             <div><input value="{{obj.exemptionResident}}" type="text" name="exemptionResident" class="input-field input-field-div4"
                 readonly></div>
           </li>
-          </ul>
-          <ul>
+        </ul>
+        <ul>
           <li>
             <span>اعفاء جامعي</span>
             <div><input value="{{obj.exemptionUniversity}}" type="text" name="exemptionUniversity" class="input-field input-field-div4"
@@ -266,23 +264,61 @@
       <button class="btn-save none">حفظ</button>
     </div>
     <div class="singleBody" id="div5">
-      <div class="report-secation">
-        <select class="report-select">
-          <option value="8/2018">
-            8/2018
-          </option>
-          <option value="7/2018">
-            8/2018
-          </option>
-          <option value="6/2018">
-            8/2018
-          </option>
+      <form action="/employeeReport" method="GET" target="_blank">
+        <select name="date" id="monthValue" class="monthValue">
+          {{#each employeeReports}}
+          <option value="{{this.dataValues.date}}">{{this.dataValues.date}}</option>
+          {{/each}}
         </select>
-        <label>
-          <input type="checkbox"  value="false"> اظهار العلاوة سنوية
-        </label>
-        <button class="btn-report">عرض التقارير</button>
-      </div>
+        <div class="report-secation">
+          <div>
+            <label>
+              <input type="checkbox" class="checkBox" name="annualRate">العلاوة السنوية
+            </label>
+            <label>
+              <input type="checkbox" class="checkBox" name="transportation"> المواصلات
+            </label>
+            <label>
+              <input type="checkbox" class="checkBox" name="allowanceWork"> بدل مهام
+            </label>
+            <label>
+              <input type="checkbox" class="checkBox" name="childAllownace"> علاوة ابناء
+            </label>
+            <label>
+              <input type="checkbox" class="checkBox" name="wifeAllowance">علاوة زوجة
+            </label>
+            <label>
+              <input type="checkbox" class="checkBox" name="allowanceGasoline"> بدل بنزين
+            </label>
+          </div>
+          <div>
+            <label>
+              <input type="checkbox" class="checkBox" name="totalTaxes"> مجموع الضريبة
+            </label>
+            <label>
+              <input type="checkbox" class="checkBox" name="deductionsHealthInsurance"> التأمين الصحي
+            </label>
+            <label>
+              <input type="checkbox" class="checkBox" name="deductionsLoans"> قروض وسلف
+            </label>
+            <label>
+              <input type="checkbox" class="checkBox" name="deductionsSocialFund"> الصندوق الاجتماعي
+            </label>
+            <label>
+              <input type="checkbox" class="checkBox" name="savings">الادخار
+            </label>
+            <label>
+              <input type="checkbox" class="checkBox" name="contributionOfEmployee">مساهمة الموظف في الضمان
+            </label>
+            <label>
+              <input type="checkbox" class="checkBox" name="purchaseBoxes">صناديق مشتريات
+            </label>
+          </div>
+
+        </div>
+        <input value="{{id}}" name="id" class="none">
+        <button id="{{id}}" class="btn-report">عرض</button>
+      </form>
     </div>
   </div>
 </div>

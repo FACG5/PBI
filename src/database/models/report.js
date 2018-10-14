@@ -9,6 +9,10 @@ const report = sequelize.define('report', {
   id_number: {
     type: Sequelize.STRING,
   },
+  employee_id: {
+    type: Sequelize.INTEGER,
+    defaultValue: 0,
+  },
   child_allownace: {
     type: Sequelize.INTEGER,
     defaultValue: 0,

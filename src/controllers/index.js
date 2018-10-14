@@ -15,6 +15,7 @@ const logout = require('./logout');
 const login = require('./login');
 const files = require('./files');
 const autheticate = require('../middleware/authentication');
+const employeeReport = require('./employeeReport');
 
 const router = express.Router();
 
@@ -41,6 +42,7 @@ router.put('/carts', autheticate, carts.put);
 router.post('/uploadFiles', autheticate, files.post);
 router.get('/downloadReports/:date', autheticate, reports.downloadExcel);
 router.get('/download/:fileName', autheticate, files.get);
+router.get('/employeeReport', autheticate, employeeReport.get);
 
 router.use(errors.client);
 router.use(errors.server);
