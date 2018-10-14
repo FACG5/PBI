@@ -1,4 +1,6 @@
-.box .btn-special, .box .btn-save, .box .btn-report {
+.box .btn-special,
+.box .btn-save,
+.box .btn-report {
   box-shadow: -1px 1px 3px 0px #201a3a;
   float: left;
   border: none;
@@ -96,8 +98,6 @@
   color: #c19827;
 }
 
-
-
 .input-field-editable {
   border-width: 0px;
   max-width: 159px;
@@ -116,7 +116,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 10px;
-
 }
 
 #div1 ul li:first-child {
@@ -144,7 +143,8 @@
   z-index: -1;
 }
 
-.inputfile+label, .inputfile1+label {
+.inputfile + label,
+.inputfile1 + label {
   font-size: 14.8px;
   font-weight: 100;
   color: white;
@@ -156,11 +156,25 @@
   padding: 5px 10px;
 }
 
-.inputfile:focus+label, .inputfile+label:hover, .inputfile1:focus+label, .inputfile2+label:hover {
+.inputfile:focus + label,
+.inputfile + label:hover,
+.inputfile1:focus + label,
+.inputfile2 + label:hover {
   background-color: #3f3663;
 }
+.singleBody .monthValue {
+  border: none;
+  border-radius: 5px;
+  box-shadow: -1px 1px 3px 0px #201a3a;
+  width: 300px;
+  padding: 0px 10px;
+  background: none;
+  height: 35px;
+  margin: 30px;
+}
 
-.inputfile+label, .inputfile1+label {
+.inputfile + label,
+.inputfile1 + label {
   cursor: pointer;
 }
 
@@ -168,17 +182,17 @@
   color: #fff !important;
 }
 
-.box ul li>div span {
+.box ul li > div span {
   color: #c19827;
   display: block;
 }
 
-.box ul li>div span a {
+.box ul li > div span a {
   color: #c19827;
   text-decoration: none;
 }
 
-.box ul li>div span a:hover {
+.box ul li > div span a:hover {
   color: #201a3a;
   border-bottom: 1px solid #201a3a;
 }
@@ -186,7 +200,7 @@
 .first-box div {
   max-width: 100px;
 }
-.first-box  > div {
+.first-box > div {
   max-width: 400px !important;
 }
 
@@ -207,10 +221,13 @@
 .report-secation {
   padding: 8px;
   padding: 40px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
-
+.report-secation > div {
+  display: grid;
+  grid-template-columns: 1fr;
+}
 .report-select {
   color: #c19827;
   background: #fff;
@@ -218,20 +235,17 @@
   font-weight: bold;
 }
 
-form{
+form.form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 10px;
 }
 form > ul {
-
-  width: 300px
-} 
+  width: 300px;
+}
 .pusrchaseBoxList {
   display: block !important;
 }
-.pusrchaseBoxLi{
+.pusrchaseBoxLi {
   padding: 1px 14px !important ;
-  
-
 }
