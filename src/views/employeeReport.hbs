@@ -1,0 +1,128 @@
+<div class="invoice-box" dir="rtl" id="slip">
+    <div class="logo">
+        <img src="https://image.ibb.co/dDnePK/pbi_logo.png" alt="">
+        <span class="title">تقرير الموظف {{employe.name}} - شهر {{reportt.date}}</span>
+    </div>
+    <hr>
+    <div class="personalDetails">
+        <div class='information'>
+            <span> الإسم : </span>
+            <span>{{employe.name}}</span>
+        </div>
+        <div class='information'>
+            <span> المسمى الوظيفي : </span>
+            <span> {{employe.jobTitle}}</span>
+        </div>
+        <div class='information'>
+            <span> الدرجة : </span>
+            <span>{{employe.class}}</span>
+        </div>
+        <div class='information'>
+            <span>الفئة : </span>
+            <span>{{employe.category}}</span>
+        </div>
+    </div>
+    <div class="salaryDetails">
+        <div class="bonus">
+            <div class='information'>
+                <span>الراتب الأساسي : </span>
+                <span>{{reportt.salary}}</span>
+            </div>
+            {{#if reportt.annualRate}}
+            <div class='information'>
+                <span>العلاوة السنوية : </span>
+                <span>{{reportt.annualRate}}</span>
+            </div>
+            {{/if}}
+            {{#if reportt.transportation}}
+            <div class='information'>
+                <span>المواصلات: </span>
+                <span>{{reportt.transportation}}</span>
+            </div>
+            {{/if}}
+            {{#if reportt.allowanceWork}}
+            <div class='information'>
+                <span>بدل مهام :</span>
+                <span>{{reportt.allowanceWork}}</span>
+            </div>
+            {{/if}}
+            {{#if reportt.childAllownace}}
+            <div class='information'>
+                <span>علاوات ابناء :</span>
+                <span>{{reportt.childAllownace}}</span>
+            </div>
+            {{/if}}
+            {{#if reportt.wifeAllowance}}
+            <div class='information'>
+                <span>علاوة زوجة :</span>
+                <span>{{reportt.wifeAllowance}}</span>
+            </div>
+            {{/if}}
+            <hr>
+            <div class='information'>
+                <span>مجموع العلاوات المسجلة : </span>
+                <span>{{reportt.totalAllownace}}</span>
+            </div>
+        </div>
+        <div class="vLine"></div>
+        <div class="deductions">
+            <div class='information'>
+                <span class="deductionsTitle"> الخصومات</span>
+            </div>
+            {{#if reportt.totalTaxes}}
+            <div class='information'>
+                <span>مجموع الضريبة بالدولار : </span>
+                <span>{{reportt.totalTaxes}}</span>
+            </div>
+            {{/if}} {{#if reportt.deductionsHealthInsurance}}
+            <div class='information'>
+                <span>التأمين الصحي : </span>
+                <span>{{reportt.deductionsHealthInsurance}}</span>
+            </div>
+            {{/if}}
+            {{#if reportt.deductionsLoans}}
+            <div class='information'>
+                <span>قروض وسلف</span>
+                <span>{{reportt.deductionsLoans}}</span>
+            </div>
+            {{/if}}
+            {{#if reportt.deductionsSocialFund}}
+            <div class='information'>
+                <span>الصندوق الاجتماعي</span>
+                <span>{{reportt.deductionsSocialFund}}</span>
+            </div>
+            {{/if}}
+            {{#if reportt.savings}}
+            <div class='information'>
+                <span>الادخار : </span>
+                <span>{{reportt.savings}}</span>
+            </div>
+            {{/if}}
+            {{#if reportt.contributionOfEmployee}}
+            <div class='information'>
+                <span>مساهمة الموظف في الضمان</span>
+                <span>{{reportt.deductionsSocialFund}}</span>
+            </div>
+            {{/if}}
+            {{#if reportt.purchaseBoxes}}
+            <div class='information'>
+                <span>صناديق المشتريات/span>
+                <span>{{reportt.purchaseBoxes}}</span>
+            </div>
+            {{/if}}
+            <hr>
+            <div class='information'>
+                <span>مجموع الاقتطاعات : </span>
+                <span>{{reportt.totalDeductions}}</span>
+            </div>
+        </div>
+        <div class="finalSalary">
+            <span> صافي الراتب المستحق : </span>
+            <span>{{reportt.finalSalary}}</span>
+        </div>
+    </div>
+    <div class="sig">
+        <span>مسؤولة الشؤون الادارية</span>
+        <span>دانا الجلاد</span>
+    </div>
+</div>
