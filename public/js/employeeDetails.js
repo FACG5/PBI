@@ -1,8 +1,10 @@
-
 const links = document.querySelectorAll('.tablink');
 const singleBody = document.querySelectorAll('.singleBody');
 const btnSave = document.querySelectorAll('.btn-save');
 const pusrchaseBox = document.querySelectorAll('.pusrchaseBox');
+const monthValue = document.getElementById('monthValue');
+const showReport = document.querySelectorAll('.btn-report');
+const checkBox = document.querySelectorAll('.checkBox');
 
 const sendData = (form) => {
   const payment = [];
