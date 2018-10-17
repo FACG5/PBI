@@ -72,7 +72,7 @@ const employee = sequelize.define('employee', {
     defaultValue: '',
   },
   points: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.DOUBLE,
     defaultValue: 0,
   },
   transportation: {

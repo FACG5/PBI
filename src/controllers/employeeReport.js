@@ -9,6 +9,12 @@ exports.get = async (request, response, next) => {
     const { id, date } = request.query;
     const arr = Object.keys(columnsName);
     arr.push('salary', 'total_allownace', 'total_deductions', 'final_salary');
+    if (request.query.section_taxes) {
+      const index = arr.indexOf('section_taxes');
+      arr.splice(index, 1);
+      arr.push('section_taxes1', 'section_taxes2', 'section_taxes3');
+    }
+
     const employeeResult = await employee.find({ where: { id } });
     const reportResult = await report.find(
       { where: { date, employee_id: id }, attributes: arr },

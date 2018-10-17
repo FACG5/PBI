@@ -22,8 +22,9 @@ const salaryCalculations = async (employee, date, variables) => {
   const bonus = convertToCamelCase(employee);
   const bunuses = bunusesOperations(bonus, variables);
   const dedeuctions = await deductionsQuery(bunuses);
+  const dedeuctionsCamel = convertToCamelCase(dedeuctions);
   const employeeExemptions = await exemptions(bunuses);
-  const finalExemptions = exemptionsOperations(employeeExemptions, dedeuctions, variables);
+  const finalExemptions = exemptionsOperations(employeeExemptions, dedeuctionsCamel, variables);
   const finalDeductions = deductionOperations(bunuses, dedeuctions, finalExemptions, variables);
   const employeeBeforeSalary = Object.assign(bunuses, finalExemptions, finalDeductions);
   const employeeAfterSalary = finalSalaryCalculation(employeeBeforeSalary);

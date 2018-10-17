@@ -6,6 +6,9 @@ const exemptions = require('./../database/query/exemptions');
 const purchasesEmployees = require('../database/query/purchaseEmployees');
 const certficates = require('../database/models/certificate');
 const report = require('../database/models/report');
+const exemptionOpertation = require('./helpers/exemptionsOperations');
+const deductionOperations = require('./helpers/deductionsOperations');
+const variables = require('../database/models/fixedVarible');
 
 exports.get = async (req, res, next) => {
   try {
@@ -20,13 +23,16 @@ exports.get = async (req, res, next) => {
         title: 'تفاصيل الموظف ',
       });
     }
+    const variablesData = await variables.findById(1);
+    const variablesDataCamel = convertSnakeToCamel(variablesData.dataValues);
     const employeeDataCamel = convertSnakeToCamel(employeeData.dataValues);
     const bonus = await bonusQueryOneEmployee(id);
     const bonusEmployee = convertSnakeToCamel(bonus[0]);
     const deductionsData = await deductionsQuery({ employeeId: id });
     const deductions = convertSnakeToCamel(deductionsData);
     const exemptionsData = await exemptions({ employeeId: id, totalAllownace: bonusEmployee.totalAllownace });
-    const exemption = convertSnakeToCamel(exemptionsData);
+    const exemptionOpertationData = exemptionOpertation(exemptionsData, deductionsData, variablesDataCamel);    
+    const finalDeductions =  deductionOperations(bonusEmployee, deductions, exemptionOpertationData, variablesDataCamel);
     const purchasesEmployeesResult = await purchasesEmployees(id);
     
     res.locals.cssFile = ['employeeDetails', 'cart'];
@@ -39,8 +45,8 @@ exports.get = async (req, res, next) => {
       obj: employeeDataCamel,
       id: req.params.id,
       objBouns: bonusEmployee,
-      objDeductions: deductions,
-      objExemption: exemption,
+      objDeductions: finalDeductions,
+      objExemption: exemptionOpertationData,
       activePage: { employee: true },
     });
   } catch (err) {
