@@ -33,26 +33,22 @@
                 <span>العلاوة السنوية : </span>
                 <span>{{reportt.annualRate}}</span>
             </div>
-            {{/if}}
-            {{#if reportt.transportation}}
+            {{/if}} {{#if reportt.transportation}}
             <div class='information'>
                 <span>المواصلات: </span>
                 <span>{{reportt.transportation}}</span>
             </div>
-            {{/if}}
-            {{#if reportt.allowanceWork}}
+            {{/if}} {{#if reportt.allowanceWork}}
             <div class='information'>
                 <span>بدل مهام :</span>
                 <span>{{reportt.allowanceWork}}</span>
             </div>
-            {{/if}}
-            {{#if reportt.childAllownace}}
+            {{/if}} {{#if reportt.childAllownace}}
             <div class='information'>
                 <span>علاوات ابناء :</span>
                 <span>{{reportt.childAllownace}}</span>
             </div>
-            {{/if}}
-            {{#if reportt.wifeAllowance}}
+            {{/if}} {{#if reportt.wifeAllowance}}
             <div class='information'>
                 <span>علاوة زوجة :</span>
                 <span>{{reportt.wifeAllowance}}</span>
@@ -74,7 +70,8 @@
                 <span>مجموع الضريبة بالدولار : </span>
                 <span>{{reportt.totalTaxes}}</span>
             </div>
-            {{/if}} {{#if reportt.deductionsHealthInsurance}}
+            {{/if}}
+            {{#if reportt.deductionsHealthInsurance}}
             <div class='information'>
                 <span>التأمين الصحي : </span>
                 <span>{{reportt.deductionsHealthInsurance}}</span>
@@ -104,10 +101,31 @@
                 <span>{{reportt.deductionsSocialFund}}</span>
             </div>
             {{/if}}
-            {{#if reportt.purchaseBoxes}}
+             {{#if reportt.purchaseBoxes}}
             <div class='information'>
                 <span>صناديق المشتريات</span>
                 <span>{{reportt.purchaseBoxes}}</span>
+            </div>
+            {{/if}} 
+            {{#if reportt.contributionOfInstitute}}
+            <div class='information'>
+                <span>مساهمة المعهد في الضمان</span>
+                <span>{{reportt.contributionOfInstitute}}</span>
+            </div>
+            {{/if}} 
+            {{#if reportt.sectionTaxes1}}
+           <hr>
+            <div class='information'>
+                <span>شريحة ضريبية 1</span>
+                <span>{{reportt.sectionTaxes1}}</span>
+            </div>
+            <div class='information'>
+                <span>شريحة ضريبية 2</span>
+                <span>{{reportt.sectionTaxes2}}</span>
+            </div>
+            <div class='information'>
+                <span>شريحة ضريبية 3</span>
+                <span>{{reportt.sectionTaxes3}}</span>
             </div>
             {{/if}}
             <hr>

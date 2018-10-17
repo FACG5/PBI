@@ -225,7 +225,16 @@
                     readonly></div>
               </li>
               {{/each}} {{/if}}
+              
             </ul>
+          </li>
+                              <li>
+            <span>مساهمة الموظف في الضمان</span>
+            <div><span>{{objDeductions.contributionOfEmployee}}</span></div>
+          </li>
+                    <li>
+            <span>مساهمة المعهد في الضمان</span>
+            <div><span>{{objDeductions.contributionOfInstitute}}</span></div>
           </li>
         </ul>
         <input value="{{id}}" name="id" class="none">
@@ -256,6 +265,10 @@
           <li>
             <span>اعفاء المواصلات</span>
             <div><span>{{objExemption.transportationsExemptions}}</span></div>
+          </li>
+          <li>
+            <span>اعفاء الصناديق</span>
+            <div><span>{{objExemption.boxesExemptions}}</span></div>
           </li>
         </ul>
         <input value="{{id}}" name="id" class="none">
@@ -313,8 +326,13 @@
             <label>
               <input type="checkbox" class="checkBox" name="purchaseBoxes">صناديق مشتريات
             </label>
+            <label>
+              <input type="checkbox" class="checkBox" name="section_taxes">شرائح ضريبية
+            </label>
+                        <label>
+              <input type="checkbox" class="checkBox" name="contributionOfInstitute">مساهمة المعهد في الضمان
+            </label>
           </div>
-
         </div>
         <input value="{{id}}" name="id" class="none">
         <button id="{{id}}" class="btn-report">عرض</button>
